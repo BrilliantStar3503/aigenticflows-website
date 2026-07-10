@@ -3,18 +3,10 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import type { TrialWorkspaceData } from "@/components/onboarding/types";
+import { IndustrySelect } from "@/components/onboarding/industry-select";
+import { INDUSTRY_OPTIONS } from "@/lib/config/industries";
 
 const COUNTRIES = ["Philippines", "United States", "Singapore", "United Kingdom", "Australia", "Other"];
-
-const INDUSTRIES = [
-  "Insurance Agency",
-  "Financial Advisory",
-  "Real Estate",
-  "Accounting",
-  "Healthcare",
-  "Professional Services",
-  "Other",
-];
 
 interface TrialStepWorkspaceProps {
   initialData: TrialWorkspaceData;
@@ -29,7 +21,7 @@ export function TrialStepWorkspace({ initialData, onBack, onContinue }: TrialSte
   const [workspaceName, setWorkspaceName] = useState(initialData.workspaceName);
   const [companyName, setCompanyName] = useState(initialData.companyName);
   const [country, setCountry] = useState(initialData.country || COUNTRIES[0]);
-  const [industry, setIndustry] = useState(initialData.industry || INDUSTRIES[0]);
+  const [industry, setIndustry] = useState(initialData.industry || INDUSTRY_OPTIONS[0].id);
   const [touched, setTouched] = useState(false);
 
   const isValid = workspaceName.trim().length > 0 && companyName.trim().length > 0;
@@ -90,41 +82,33 @@ export function TrialStepWorkspace({ initialData, onBack, onContinue }: TrialSte
           )}
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="trial-country" className="text-[12.5px] font-medium text-neutral-700">
-              Country
-            </label>
-            <select
-              id="trial-country"
-              value={country}
-              onChange={(event) => setCountry(event.target.value)}
-              className={selectClassName}
-            >
-              {COUNTRIES.map((item) => (
-                <option key={item} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="trial-industry" className="text-[12.5px] font-medium text-neutral-700">
-              Industry
-            </label>
-            <select
-              id="trial-industry"
-              value={industry}
-              onChange={(event) => setIndustry(event.target.value)}
-              className={selectClassName}
-            >
-              {INDUSTRIES.map((item) => (
-                <option key={item} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="trial-country" className="text-[12.5px] font-medium text-neutral-700">
+            Country
+          </label>
+          <select
+            id="trial-country"
+            value={country}
+            onChange={(event) => setCountry(event.target.value)}
+            className={selectClassName}
+          >
+            {COUNTRIES.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="trial-industry" className="text-[12.5px] font-medium text-neutral-700">
+            Industry
+          </label>
+          <p className="text-[12px] leading-snug text-neutral-500">
+            <span className="font-semibold text-neutral-700">Select the industry that best matches your business.</span>{" "}
+            Your selection personalizes your AIMP workspace and will be used for future industry-specific templates, automations, and recommendations.
+          </p>
+          <IndustrySelect id="trial-industry" value={industry} onChange={setIndustry} />
         </div>
 
         <button
