@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-brand-navred: #c8102e;
+  --color-brand-red: #e60012;
+  --color-brand-red-dark: #b30011;
+  --color-brand-gold: #f5c248;
+  --color-brand-gold-hover: #e6b63a;
+  --color-brand-pink: #fff5f6;
+  --color-brand-sidebar: #fff7f3;
+  --color-brand-border: #f0f0f0;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: #ffffff;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f3f3f3 25%, #ececec 37%, #f3f3f3 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes idle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-idle-float {
+  animation: idle-float 3s ease-in-out infinite;
+}
+
+@keyframes core-pulse {
+  0%,
+  100% {
+    box-shadow: 0 20px 48px -12px rgba(230, 0, 18, 0.35), 0 0 0 0 rgba(230, 0, 18, 0.25);
+  }
+  50% {
+    box-shadow: 0 24px 56px -12px rgba(230, 0, 18, 0.4), 0 0 0 10px rgba(230, 0, 18, 0);
+  }
+}
+
+.animate-core-pulse {
+  animation: core-pulse 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
