@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { Modal } from "@/components/ui/modal";
 import { TrialStepAccount } from "@/components/onboarding/trial-step-account";
@@ -25,7 +25,6 @@ const EMPTY_WORKSPACE: TrialWorkspaceData = { workspaceName: "", companyName: ""
 const slideVariants = {
   enter: (direction: number) => ({ opacity: 0, x: direction > 0 ? 24 : -24 }),
   center: { opacity: 1, x: 0 },
-  exit: (direction: number) => ({ opacity: 0, x: direction > 0 ? -24 : 24 }),
 };
 
 export function TrialModal({ open, onClose }: TrialModalProps) {
@@ -67,64 +66,61 @@ export function TrialModal({ open, onClose }: TrialModalProps) {
         <X size={16} />
       </button>
 
-      <AnimatePresence mode="wait" custom={direction} initial={false}>
-        <motion.div
-          key={step}
-          custom={direction}
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.22, ease: "easeOut" }}
-        >
-          {step === "account" && (
-            <TrialStepAccount
-              initialData={account}
-              onContinue={(data, newUserId) => {
-                setAccount(data);
-                setUserId(newUserId);
-                goTo("workspace");
-              }}
-            />
-          )}
+      <motion.div
+        key={step}
+        custom={direction}
+        variants={slideVariants}
+        initial="enter"
+        animate="center"
+        transition={{ duration: 0.22, ease: "easeOut" }}
+      >
+        {step === "account" && (
+          <TrialStepAccount
+            initialData={account}
+            onContinue={(data, newUserId) => {
+              setAccount(data);
+              setUserId(newUserId);
+              goTo("workspace");
+            }}
+          />
+        )}
 
-          {step === "workspace" && (
-            <TrialStepWorkspace
-              initialData={workspace}
-              onBack={() => goTo("account")}
-              onContinue={(data) => {
-                setWorkspace(data);
-                goTo("template");
-              }}
-            />
-          )}
+        {step === "workspace" && (
+          <TrialStepWorkspace
+            initialData={workspace}
+            onBack={() => goTo("account")}
+            onContinue={(data) => {
+              setWorkspace(data);
+              goTo("template");
+            }}
+          />
+        )}
 
-          {step === "template" && (
-            <TrialStepTemplate
-              initialSelected={template?.id ?? ""}
-              onBack={() => goTo("workspace")}
-              onContinue={async (selected) => {
-                setTemplate(selected);
-                const result = await savePendingRegistration(userId, account.email, {
-                  companyName: workspace.companyName,
-                  workspaceName: workspace.workspaceName,
-                  industry: workspace.industry,
-                  country: workspace.country,
-                  industryTemplate: selected.id,
-                });
+        {step === "template" && (
+          <TrialStepTemplate
+            initialSelected={template?.id ?? ""}
+            onBack={() => goTo("workspace")}
+            onContinue={async (selected) => {
+              setTemplate(selected);
+              const result = await savePendingRegistration(userId, account.email, {
+                companyName: workspace.companyName,
+                workspaceName: workspace.workspaceName,
+                industry: workspace.industry,
+                country: workspace.country,
+                industryTemplate: selected.id,
+              });
 
-                if (!result.success) {
-                  throw new Error(result.error ?? "Something went wrong. Please try again.");
-                }
+              if (!result.success) {
+                throw new Error(result.error ?? "Something went wrong. Please try again.");
+              }
 
-                goTo("check-email");
-              }}
-            />
-          )}
+              goTo("check-email");
+            }}
+          />
+        )}
 
-          {step === "check-email" && <TrialStepCheckEmail email={account.email} onReturnHome={onClose} />}
-        </motion.div>
-      </AnimatePresence>
+        {step === "check-email" && <TrialStepCheckEmail email={account.email} onReturnHome={onClose} />}
+      </motion.div>
     </Modal>
   );
 }

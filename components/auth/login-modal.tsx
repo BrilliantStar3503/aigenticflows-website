@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { Modal } from "@/components/ui/modal";
 import { LoginForm } from "@/components/auth/login-form";
@@ -19,7 +19,6 @@ type AuthView = "login" | "forgot" | "success";
 const viewVariants = {
   initial: { opacity: 0, scale: 0.98 },
   animate: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.98 },
 };
 
 function LoginView({
@@ -90,32 +89,29 @@ export function LoginModal({ open, onClose }: LoginModalProps) {
         <X size={16} />
       </button>
 
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={view}
-          variants={viewVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          transition={{ duration: 0.18, ease: "easeOut" }}
-        >
-          {view === "login" && (
-            <LoginView onForgotPasswordClick={() => setView("forgot")} onSuccess={onClose} />
-          )}
-          {view === "forgot" && (
-            <ForgotPasswordModal
-              onBack={() => setView("login")}
-              onSubmitted={(email) => {
-                setResetEmail(email);
-                setView("success");
-              }}
-            />
-          )}
-          {view === "success" && (
-            <ForgotPasswordSuccess email={resetEmail} onBackToSignIn={() => setView("login")} />
-          )}
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={view}
+        variants={viewVariants}
+        initial="initial"
+        animate="animate"
+        transition={{ duration: 0.18, ease: "easeOut" }}
+      >
+        {view === "login" && (
+          <LoginView onForgotPasswordClick={() => setView("forgot")} onSuccess={onClose} />
+        )}
+        {view === "forgot" && (
+          <ForgotPasswordModal
+            onBack={() => setView("login")}
+            onSubmitted={(email) => {
+              setResetEmail(email);
+              setView("success");
+            }}
+          />
+        )}
+        {view === "success" && (
+          <ForgotPasswordSuccess email={resetEmail} onBackToSignIn={() => setView("login")} />
+        )}
+      </motion.div>
     </Modal>
   );
 }
