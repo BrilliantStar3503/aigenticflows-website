@@ -37,7 +37,16 @@ export async function signUpWithPassword(
       },
     });
     if (error) return { success: false, error: mapAuthError(error) };
-    return { success: true, userId: data.user?.id };
+
+    // Supabase returns a 200 with a fake user object (no error, identities: [])
+    // when the email already belongs to an existing account, to avoid leaking
+    // which emails are registered. Treat that the same as a real error instead
+    // of letting a bogus user id flow into provisioning.
+    if (!data.user || data.user.identities?.length === 0) {
+      return { success: false, error: "An account with this email already exists. Please sign in instead." };
+    }
+
+    return { success: true, userId: data.user.id };
   } catch (error) {
     return { success: false, error: mapAuthError(error) };
   }
