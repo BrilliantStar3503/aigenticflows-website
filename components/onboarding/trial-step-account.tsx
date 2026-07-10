@@ -51,9 +51,11 @@ export function TrialStepAccount({ initialData, onContinue }: TrialStepAccountPr
           setTouched(true);
           if (!isValid) return;
 
+          const normalizedEmail = email.trim().toLowerCase();
+
           setSubmitError(undefined);
           setIsSubmitting(true);
-          const result = await signUpWithPassword(email, password, firstName, lastName);
+          const result = await signUpWithPassword(normalizedEmail, password, firstName, lastName);
           setIsSubmitting(false);
 
           if (!result.success) {
@@ -61,7 +63,7 @@ export function TrialStepAccount({ initialData, onContinue }: TrialStepAccountPr
             return;
           }
 
-          onContinue({ firstName, lastName, email, password }, result.userId ?? "");
+          onContinue({ firstName, lastName, email: normalizedEmail, password }, result.userId ?? "");
         }}
       >
         <div className="grid grid-cols-2 gap-3">
@@ -103,6 +105,8 @@ export function TrialStepAccount({ initialData, onContinue }: TrialStepAccountPr
           <input
             id="trial-email"
             type="email"
+            autoCapitalize="none"
+            autoCorrect="off"
             placeholder="you@company.com"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
