@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, Briefcase, Building2, LineChart, Loader2, Shield } from "lucide-react";
+import { ArrowLeft, Box, Briefcase, Building2, LineChart, Loader2, Shield } from "lucide-react";
 import { WorkspaceCard } from "@/components/onboarding/workspace-card";
 import type { TrialTemplate } from "@/components/onboarding/types";
+
+export const BLANK_TEMPLATE_ID = "blank";
 
 const TEMPLATES = [
   {
@@ -11,6 +13,7 @@ const TEMPLATES = [
     title: "Insurance Agency",
     description: "CRM + Recruitment + AI",
     icon: Shield,
+    recommended: true,
   },
   {
     id: "financial-advisory",
@@ -29,6 +32,12 @@ const TEMPLATES = [
     title: "Professional Services",
     description: "Business Operations",
     icon: Briefcase,
+  },
+  {
+    id: BLANK_TEMPLATE_ID,
+    title: "Blank Workspace",
+    description: "Start with a clean workspace. Enable only the modules you need.",
+    icon: Box,
   },
 ];
 
@@ -71,6 +80,7 @@ export function TrialStepTemplate({ initialSelected, onBack, onContinue }: Trial
             title={template.title}
             description={template.description}
             selected={selectedId === template.id}
+            recommended={template.recommended}
             onClick={() => setSelectedId(template.id)}
           />
         ))}

@@ -6,10 +6,18 @@ interface WorkspaceCardProps {
   title: string;
   description: string;
   selected: boolean;
+  recommended?: boolean;
   onClick: () => void;
 }
 
-export function WorkspaceCard({ icon: Icon, title, description, selected, onClick }: WorkspaceCardProps) {
+export function WorkspaceCard({
+  icon: Icon,
+  title,
+  description,
+  selected,
+  recommended,
+  onClick,
+}: WorkspaceCardProps) {
   return (
     <button
       type="button"
@@ -34,7 +42,14 @@ export function WorkspaceCard({ icon: Icon, title, description, selected, onClic
         <Icon size={16} className="text-white" strokeWidth={2} />
       </div>
       <div>
-        <div className="text-[13.5px] font-bold text-neutral-900">{title}</div>
+        <div className="flex items-center gap-1.5">
+          <span className="text-[13.5px] font-bold text-neutral-900">{title}</span>
+          {recommended && (
+            <span className="inline-flex items-center rounded-full bg-brand-red px-1.5 py-0.5 text-[8.5px] font-bold uppercase tracking-wide text-white">
+              Recommended
+            </span>
+          )}
+        </div>
         <div className="mt-0.5 text-[11.5px] leading-snug text-neutral-500">{description}</div>
       </div>
     </button>
