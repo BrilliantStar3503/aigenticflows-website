@@ -9,6 +9,23 @@ export interface SavePendingRegistrationResult {
   error?: string;
 }
 
+const NETWORK_RETRY_DELAYS_MS = [500, 1500];
+
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * "Failed to fetch" is the browser's generic signal that the request never
+ * got a response at all (dropped connection, DNS hiccup, extension
+ * interference) rather than the server returning an error. Retrying a real
+ * application error (e.g. a rejected RPC precondition) would be pointless,
+ * so only this class of failure is retried.
+ */
+function isNetworkFailure(error: unknown): boolean {
+  return error instanceof TypeError;
+}
+
 /**
  * Persists onboarding data server-side, tied to the newly created auth user.
  * Called before a session exists (email confirmation is required by this
@@ -20,27 +37,40 @@ export async function savePendingRegistration(
   email: string,
   input: ProvisionWorkspaceInput
 ): Promise<SavePendingRegistrationResult> {
-  try {
-    const supabase = getSupabaseBrowserClient();
-    const { timeZone, currency, locale } = getLocaleDefaults(input.country);
+  const supabase = getSupabaseBrowserClient();
+  const { timeZone, currency, locale } = getLocaleDefaults(input.country);
 
-    const { error } = await supabase.rpc("save_pending_registration", {
-      p_user_id: userId,
-      p_email: email,
-      p_company_name: input.companyName,
-      p_workspace_name: input.workspaceName,
-      p_industry: input.industry,
-      p_country: input.country,
-      p_industry_template: input.industryTemplate || null,
-      p_time_zone: timeZone,
-      p_currency: currency,
-      p_locale: locale,
-    });
+  for (let attempt = 0; ; attempt++) {
+    try {
+      const { error } = await supabase.rpc("save_pending_registration", {
+        p_user_id: userId,
+        p_email: email,
+        p_company_name: input.companyName,
+        p_workspace_name: input.workspaceName,
+        p_industry: input.industry,
+        p_country: input.country,
+        p_industry_template: input.industryTemplate || null,
+        p_time_zone: timeZone,
+        p_currency: currency,
+        p_locale: locale,
+      });
 
-    if (error) return { success: false, error: error.message };
-    return { success: true };
-  } catch (error) {
-    return { success: false, error: error instanceof Error ? error.message : "Something went wrong. Please try again." };
+      if (error) return { success: false, error: error.message };
+      return { success: true };
+    } catch (error) {
+      if (isNetworkFailure(error) && attempt < NETWORK_RETRY_DELAYS_MS.length) {
+        await sleep(NETWORK_RETRY_DELAYS_MS[attempt]);
+        continue;
+      }
+      return {
+        success: false,
+        error: isNetworkFailure(error)
+          ? "Couldn't reach the server. Please check your connection and try again."
+          : error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+      };
+    }
   }
 }
 
