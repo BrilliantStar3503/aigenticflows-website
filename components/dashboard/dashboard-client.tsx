@@ -18,6 +18,8 @@ import { signOut } from "@/lib/auth/actions";
 import { EmptyState } from "@/components/shared/empty-state";
 import { provisionWorkspace } from "@/lib/provisioning/provisionWorkspace";
 import { deletePendingRegistration, readPendingRegistration } from "@/lib/provisioning/pendingRegistration";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import { buildCrmHandoffUrl } from "@/lib/crm/handoff";
 
 type DashboardState = "config-error" | "no-workspace" | "ready";
 type ProvisioningPhase = "idle" | "checking" | "provisioning" | "error";
@@ -111,6 +113,22 @@ export function DashboardClient({ state, email, organizationName, workspaceName,
 
       await deletePendingRegistration();
       if (cancelled) return;
+
+      const supabase = getSupabaseBrowserClient();
+      const [{ data: agency }, { data: sessionData }] = await Promise.all([
+        supabase.from("agencies").select("slug").eq("id", result.agencyId).maybeSingle(),
+        supabase.auth.getSession(),
+      ]);
+      if (cancelled) return;
+
+      if (agency?.slug && sessionData.session) {
+        window.location.href = buildCrmHandoffUrl({
+          accessToken: sessionData.session.access_token,
+          refreshToken: sessionData.session.refresh_token,
+          agencySlug: agency.slug,
+        });
+        return;
+      }
 
       router.refresh();
     })();

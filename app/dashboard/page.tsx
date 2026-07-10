@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { DashboardClient } from "@/components/dashboard/dashboard-client";
+import { buildCrmHandoffUrl } from "@/lib/crm/handoff";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -36,24 +37,23 @@ export default async function DashboardPage() {
 
   const { data: agency } = await supabase
     .from("agencies")
-    .select("name, industry")
+    .select("slug")
     .eq("id", membership.agency_id)
     .maybeSingle();
 
-  const { data: units } = await supabase
-    .from("units")
-    .select("name")
-    .eq("agency_id", membership.agency_id)
-    .order("created_at", { ascending: true })
-    .limit(1);
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
 
-  return (
-    <DashboardClient
-      state="ready"
-      email={user.email ?? ""}
-      organizationName={agency?.name ?? "—"}
-      workspaceName={units?.[0]?.name ?? "—"}
-      industry={agency?.industry ?? "—"}
-    />
-  );
+  if (agency?.slug && session) {
+    redirect(
+      buildCrmHandoffUrl({
+        accessToken: session.access_token,
+        refreshToken: session.refresh_token,
+        agencySlug: agency.slug,
+      })
+    );
+  }
+
+  return <DashboardClient state="no-workspace" email={user.email ?? ""} />;
 }
