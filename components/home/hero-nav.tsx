@@ -36,7 +36,7 @@ export function HeroNav({ onLoginClick, onStartTrialClick }: HeroNavProps) {
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-white/15">
             <div className="h-3 w-3 rounded-[3px] bg-white" />
           </div>
-          <span className="text-base font-bold tracking-tight text-white">AIMP</span>
+          <span className="text-base font-bold tracking-tight text-white">AIGENTIC Flows</span>
         </Link>
 
         <nav className="hidden items-center gap-3.5 md:flex lg:gap-9">

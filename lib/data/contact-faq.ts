@@ -11,7 +11,7 @@ export const CONTACT_FAQ_ITEMS = [
   {
     question: "Can I customize workflows?",
     answer:
-      "Yes. AIMP's workflow builder lets you configure triggers, conditions, and actions specific to how your team operates.",
+      "Yes. AIGENTIC Flows' workflow builder lets you configure triggers, conditions, and actions specific to how your team operates.",
   },
   {
     question: "Do you have enterprise pricing?",
@@ -19,7 +19,7 @@ export const CONTACT_FAQ_ITEMS = [
       "Yes. Enterprise plans include dedicated onboarding, custom branding, and API access — contact our sales team for a tailored quote.",
   },
   {
-    question: "Can I try AIMP before purchasing?",
+    question: "Can I try AIGENTIC Flows before purchasing?",
     answer: "Yes. Every plan starts with a free 14-day trial, no credit card required.",
   },
 ];

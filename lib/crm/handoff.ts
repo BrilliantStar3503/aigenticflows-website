@@ -1,10 +1,14 @@
 /**
- * The AIMP public site and the PRUBSQ-AIMP CRM are separate apps on separate
- * domains sharing one Supabase project. Cookies can't cross domains, so a
- * freshly authenticated session here is handed off by putting its tokens in
- * the URL fragment of a redirect to the CRM's own session-adoption page —
- * the fragment is never sent to (or logged by) either server, only read by
- * client-side JS once it arrives.
+ * The AIGENTIC Flows public site and the AIGENTIC Flows CRM are separate apps
+ * on separate domains sharing one Supabase project. Cookies can't cross
+ * domains, so a freshly authenticated session here is handed off by putting
+ * its tokens in the URL fragment of a redirect to the CRM's own
+ * session-adoption page — the fragment is never sent to (or logged by)
+ * either server, only read by client-side JS once it arrives.
+ *
+ * TODO(branding-migration): CRM_URL fallback still points at the pre-rename
+ * "prubsq-aimp" Vercel deployment. Update once the CRM app's production
+ * domain is renamed/confirmed (see migration report — manual actions).
  */
 const CRM_URL = process.env.NEXT_PUBLIC_CRM_URL || "https://prubsq-aimp.vercel.app";
 

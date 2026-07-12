@@ -6,7 +6,7 @@ export function DashboardTopbar() {
       <div className="flex h-6 w-6 items-center justify-center rounded-md bg-brand-red">
         <div className="h-2 w-2 rounded-[2px] bg-white" />
       </div>
-      <span className="text-[13px] font-bold text-neutral-900">AIMP</span>
+      <span className="text-[13px] font-bold text-neutral-900">AIGENTIC Flows</span>
 
       <div className="flex flex-1 items-center gap-2 rounded-lg border border-neutral-100 bg-neutral-50 px-3 py-1.5">
         <Search size={13} className="text-neutral-400" />

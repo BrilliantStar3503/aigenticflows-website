@@ -35,15 +35,15 @@ export function buildPageMetadata({ title, description, path }: PageMetadataInpu
 
 export const PAGE_METADATA = {
   home: {
-    title: "AIMP — AI Business Operating Platform",
+    title: "AIGENTIC Flows — AI Business Operating Platform",
     description:
-      "AIMP combines CRM, AI, automation, analytics, and communication into one intelligent platform for service-based organizations.",
+      "AIGENTIC Flows combines CRM, AI, automation, analytics, and communication into one intelligent platform for service-based organizations.",
     path: "/",
   },
   solutions: {
     title: "Solutions — One Platform for Every Service Business",
     description:
-      "AIMP is a configurable business operating platform built for service-based organizations, from insurance agencies to professional services firms.",
+      "AIGENTIC Flows is a configurable business operating platform built for service-based organizations, from insurance agencies to professional services firms.",
     path: "/solutions",
   },
   features: {
@@ -55,25 +55,25 @@ export const PAGE_METADATA = {
   pricing: {
     title: "Pricing — Simple Plans That Scale With You",
     description:
-      "Choose the AIMP plan that fits your business today and scale as your organization grows. Start with a free 14-day trial.",
+      "Choose the AIGENTIC Flows plan that fits your business today and scale as your organization grows. Start with a free 14-day trial.",
     path: "/pricing",
   },
   about: {
-    title: "About AIMP — Building the Future Operating System",
+    title: "About AIGENTIC Flows — Building the Future Operating System",
     description:
-      "AIMP was created to replace fragmented business software with one intelligent operating platform for modern service-based businesses.",
+      "AIGENTIC Flows was created to replace fragmented business software with one intelligent operating platform for modern service-based businesses.",
     path: "/about",
   },
   resources: {
     title: "Resources — Guides, Docs, and Best Practices",
     description:
-      "Browse guides, documentation, case studies, videos, templates, and best practices to help your business succeed with AIMP.",
+      "Browse guides, documentation, case studies, videos, templates, and best practices to help your business succeed with AIGENTIC Flows.",
     path: "/resources",
   },
   contact: {
     title: "Contact Sales — Let's Build Your Business Operating Platform",
     description:
-      "Talk to our team, book a demo, or start your free trial. We're here to help you modernize your business with AIMP.",
+      "Talk to our team, book a demo, or start your free trial. We're here to help you modernize your business with AIGENTIC Flows.",
     path: "/contact",
   },
 } as const satisfies Record<string, PageMetadataInput>;

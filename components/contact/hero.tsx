@@ -39,7 +39,7 @@ export function ContactHero({ onStartTrialClick }: ContactHeroProps) {
               transition={{ duration: 0.4, delay: 0.16 }}
               className="mt-6 max-w-[440px] text-[16px] leading-relaxed text-neutral-600"
             >
-              Whether you&apos;re exploring AIMP or ready to modernize your
+              Whether you&apos;re exploring AIGENTIC Flows or ready to modernize your
               business, our team is here to help.
             </motion.p>
 

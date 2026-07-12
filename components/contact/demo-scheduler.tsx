@@ -24,7 +24,7 @@ export function DemoScheduler() {
           <h2 className="text-[32px] font-bold tracking-tight text-neutral-900">Book a demo</h2>
           <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">
             Pick a time that works for you — a member of our team will walk
-            you through AIMP live.
+            you through AIGENTIC Flows live.
           </p>
         </div>
 

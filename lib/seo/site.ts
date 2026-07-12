@@ -1,8 +1,8 @@
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-export const SITE_NAME = "AIMP";
-export const SITE_TITLE_DEFAULT = "AIMP — AI Business Operating Platform";
+export const SITE_NAME = "AIGENTIC Flows";
+export const SITE_TITLE_DEFAULT = "AIGENTIC Flows — AI Business Operating Platform";
 export const SITE_DESCRIPTION =
-  "AIMP is the AI-powered business operating platform that helps service-based organizations automate operations, engage clients, and scale growth — all from one intelligent workspace.";
+  "AIGENTIC Flows is the AI-powered business operating platform that helps service-based organizations automate operations, engage clients, and scale growth — all from one intelligent workspace.";
 
 export const OG_IMAGE = {
   url: "/opengraph-image",

@@ -38,7 +38,7 @@ export function PlatformDiagram() {
             One core platform. Every industry.
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">
-            The same AIMP core powers every implementation — only the workflows change.
+            The same AIGENTIC Flows core powers every implementation — only the workflows change.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export function PlatformDiagram() {
           <div className="my-4 h-8 w-px bg-neutral-300" />
 
           <div className="animate-core-pulse rounded-2xl bg-brand-red px-10 py-5 text-center">
-            <span className="text-[16px] font-bold text-white">Same AIMP Core</span>
+            <span className="text-[16px] font-bold text-white">Same AIGENTIC Flows Core</span>
           </div>
 
           <div className="my-4 h-8 w-px bg-neutral-300" />

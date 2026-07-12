@@ -7,7 +7,7 @@ export const PRICING_FAQ_ITEMS = [
   {
     question: "Is there a free trial?",
     answer:
-      "Every plan starts with a free 14-day trial, no credit card required, so you can explore AIMP before committing.",
+      "Every plan starts with a free 14-day trial, no credit card required, so you can explore AIGENTIC Flows before committing.",
   },
   {
     question: "Do you charge per user?",
@@ -23,11 +23,11 @@ export const PRICING_FAQ_ITEMS = [
   },
   {
     question: "Do you support multiple branches?",
-    answer: "Yes. AIMP is built for multi-level organizations, with role-based access across branches and teams.",
+    answer: "Yes. AIGENTIC Flows is built for multi-level organizations, with role-based access across branches and teams.",
   },
   {
-    question: "How secure is AIMP?",
-    answer: "AIMP uses role-based access control and enterprise-grade infrastructure to keep your business data secure.",
+    question: "How secure is AIGENTIC Flows?",
+    answer: "AIGENTIC Flows uses role-based access control and enterprise-grade infrastructure to keep your business data secure.",
   },
   {
     question: "Do you offer onboarding?",

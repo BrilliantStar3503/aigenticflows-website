@@ -5,7 +5,7 @@ import { PricingCard, type PricingTier } from "@/components/pricing/pricing-card
 const TIERS: PricingTier[] = [
   {
     name: "Starter",
-    description: "For small teams getting started with AIMP.",
+    description: "For small teams getting started with AIGENTIC Flows.",
     price: "Custom",
     billingLabel: "Tailored to your team size",
     ctaLabel: "Start Free Trial",

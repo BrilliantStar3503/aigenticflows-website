@@ -19,7 +19,7 @@ export function softwareApplicationJsonLd() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "AIMP is the AI-powered business operating platform that combines CRM, automation, analytics, and communication for service-based organizations.",
+      "AIGENTIC Flows is the AI-powered business operating platform that combines CRM, automation, analytics, and communication for service-based organizations.",
     offers: {
       "@type": "Offer",
       price: "0",

@@ -11,7 +11,7 @@ export function Mission() {
         <p className="mt-5 text-[16px] leading-relaxed text-neutral-600">
           Most service-based organizations run on a patchwork of
           spreadsheets, chat threads, and point solutions that were never
-          designed to talk to each other. AIMP exists to unify operations —
+          designed to talk to each other. AIGENTIC Flows exists to unify operations —
           CRM, recruitment, marketing, analytics, and communication — into
           one intelligent platform, so businesses can focus on growth instead
           of stitching tools together.

@@ -106,7 +106,7 @@ export function TrialStepWorkspace({ initialData, onBack, onContinue }: TrialSte
           </label>
           <p className="text-[12px] leading-snug text-neutral-500">
             <span className="font-semibold text-neutral-700">Select the industry that best matches your business.</span>{" "}
-            Your selection personalizes your AIMP workspace and will be used for future industry-specific templates, automations, and recommendations.
+            Your selection personalizes your AIGENTIC Flows workspace and will be used for future industry-specific templates, automations, and recommendations.
           </p>
           <IndustrySelect id="trial-industry" value={industry} onChange={setIndustry} />
         </div>

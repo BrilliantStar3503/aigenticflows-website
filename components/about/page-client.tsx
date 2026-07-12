@@ -41,7 +41,7 @@ export function AboutPageClient() {
 
       <CTASection
         headline="Ready to modernize your business?"
-        subtitle="Start your free 14-day trial, or talk to our team about what AIMP looks like for your business."
+        subtitle="Start your free 14-day trial, or talk to our team about what AIGENTIC Flows looks like for your business."
         onPrimaryClick={() => setIsTrialOpen(true)}
         secondaryLabel="Talk to Sales"
       />

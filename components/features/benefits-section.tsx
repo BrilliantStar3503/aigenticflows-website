@@ -33,7 +33,7 @@ export function BenefitsSection() {
     <section className="mx-auto max-w-[1600px] px-4 sm:px-6 py-20 lg:px-14">
       <div className="mx-auto max-w-[560px] text-center">
         <h2 className="text-[32px] font-bold tracking-tight text-neutral-900">
-          Why businesses choose AIMP
+          Why businesses choose AIGENTIC Flows
         </h2>
       </div>
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

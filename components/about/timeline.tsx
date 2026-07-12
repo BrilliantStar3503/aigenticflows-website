@@ -19,7 +19,7 @@ const STAGES = [
   {
     icon: Boxes,
     title: "One Unified Platform",
-    description: "AIMP brought CRM, automation, analytics, and communication into a single configurable core.",
+    description: "AIGENTIC Flows brought CRM, automation, analytics, and communication into a single configurable core.",
   },
   {
     icon: Rocket,
@@ -33,7 +33,7 @@ export function Timeline() {
     <section className="bg-neutral-50 py-20">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-14">
         <div className="mx-auto max-w-[560px] text-center">
-          <h2 className="text-[32px] font-bold tracking-tight text-neutral-900">Why AIMP exists</h2>
+          <h2 className="text-[32px] font-bold tracking-tight text-neutral-900">Why AIGENTIC Flows exists</h2>
         </div>
 
         <div className="mx-auto mt-14 max-w-[640px]">

@@ -58,7 +58,7 @@ export function SolutionsHero({ onStartTrialClick }: SolutionsHeroProps) {
               transition={{ duration: 0.4, delay: 0.16 }}
               className="mt-6 max-w-[440px] text-[16px] leading-relaxed text-neutral-600"
             >
-              AIMP is a configurable business operating platform built for
+              AIGENTIC Flows is a configurable business operating platform built for
               service-based organizations. Insurance was our first
               implementation — the platform itself adapts to how your
               business actually operates.

@@ -37,7 +37,7 @@ export function PricingPageClient() {
       <FAQ />
 
       <CTASection
-        headline="Start building your business with AIMP today."
+        headline="Start building your business with AIGENTIC Flows today."
         subtitle="Free 14-day trial. No credit card required."
         onPrimaryClick={() => setIsTrialOpen(true)}
         secondaryLabel="Talk to Sales"

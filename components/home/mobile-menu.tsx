@@ -100,7 +100,7 @@ export function MobileMenu({ open, onClose, onLoginClick, onStartTrialClick }: M
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="h-5 w-5 rounded-md bg-brand-red" />
-                <span className="text-base font-bold tracking-tight text-neutral-900">AIMP</span>
+                <span className="text-base font-bold tracking-tight text-neutral-900">AIGENTIC Flows</span>
               </div>
               <button
                 type="button"

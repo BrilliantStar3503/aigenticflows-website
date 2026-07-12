@@ -21,7 +21,7 @@ export function AboutHero({ onStartTrialClick }: AboutHeroProps) {
               transition={{ duration: 0.4 }}
               className="inline-flex items-center rounded-full border border-[#FEE2E2] bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-red"
             >
-              About AIMP
+              About AIGENTIC Flows
             </motion.span>
 
             <motion.h1
@@ -40,7 +40,7 @@ export function AboutHero({ onStartTrialClick }: AboutHeroProps) {
               transition={{ duration: 0.4, delay: 0.16 }}
               className="mt-6 max-w-[440px] text-[16px] leading-relaxed text-neutral-600"
             >
-              AIMP was created to replace fragmented business software with
+              AIGENTIC Flows was created to replace fragmented business software with
               one intelligent operating platform — built to unify how
               service-based organizations run, grow, and serve their clients.
             </motion.p>

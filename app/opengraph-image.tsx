@@ -20,7 +20,7 @@ export default function OpengraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div style={{ width: 40, height: 40, borderRadius: 10, background: "#E60012" }} />
-          <div style={{ fontSize: 40, fontWeight: 700, color: "#111111" }}>AIMP</div>
+          <div style={{ fontSize: 40, fontWeight: 700, color: "#111111" }}>AIGENTIC Flows</div>
         </div>
         <div
           style={{

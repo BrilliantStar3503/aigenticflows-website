@@ -15,7 +15,7 @@ export function CommunitySection() {
           <h2 className="text-[28px] font-bold tracking-tight text-neutral-900">Need help?</h2>
           <p className="mt-3.5 max-w-[380px] text-[15px] leading-relaxed text-neutral-600">
             Our documentation and support team are here to help you get the
-            most out of AIMP — whether you&apos;re just getting started or
+            most out of AIGENTIC Flows — whether you&apos;re just getting started or
             scaling across branches.
           </p>
         </div>

@@ -33,7 +33,7 @@ export function ResourcesHero({ onStartTrialClick }: ResourcesHeroProps) {
               transition={{ duration: 0.4, delay: 0.08 }}
               className="mt-5 text-[42px] font-bold leading-[1.12] tracking-tight text-neutral-900 lg:text-[50px]"
             >
-              Everything you need to succeed with AIMP.
+              Everything you need to succeed with AIGENTIC Flows.
             </motion.h1>
 
             <motion.p
@@ -65,7 +65,7 @@ export function ResourcesHero({ onStartTrialClick }: ResourcesHeroProps) {
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             <TabletScale>
-              <ScreenshotFrame label="docs.aimp.io/getting-started">
+              <ScreenshotFrame label="docs.aigenticflows.com/getting-started">
                 <div className="flex gap-5">
                   <div className="hidden w-[140px] flex-shrink-0 flex-col gap-1 sm:flex">
                     {DOC_SIDEBAR.map((item, index) => (
@@ -86,7 +86,7 @@ export function ResourcesHero({ onStartTrialClick }: ResourcesHeroProps) {
                       <FileText size={12} />
                       Documentation
                     </div>
-                    <h3 className="mt-2 text-[16px] font-bold text-neutral-900">Getting started with AIMP</h3>
+                    <h3 className="mt-2 text-[16px] font-bold text-neutral-900">Getting started with AIGENTIC Flows</h3>
                     <div className="mt-3 space-y-2">
                       <div className="h-2 w-full rounded bg-neutral-100" />
                       <div className="h-2 w-[92%] rounded bg-neutral-100" />

@@ -5,7 +5,7 @@ const FEATURED = [
   {
     icon: Rocket,
     category: "Guide",
-    title: "Getting Started with AIMP",
+    title: "Getting Started with AIGENTIC Flows",
     summary: "Set up your workspace, invite your team, and configure your first workflow.",
     readingTime: "6 min read",
   },
@@ -20,7 +20,7 @@ const FEATURED = [
     icon: Users,
     category: "Best Practices",
     title: "CRM Best Practices",
-    summary: "How high-performing teams organize leads, clients, and follow-ups in AIMP.",
+    summary: "How high-performing teams organize leads, clients, and follow-ups in AIGENTIC Flows.",
     readingTime: "7 min read",
   },
   {
@@ -34,7 +34,7 @@ const FEATURED = [
     icon: Network,
     category: "Case Study",
     title: "Scaling Multi-Branch Operations",
-    summary: "How a growing agency used AIMP to manage hierarchy across branches.",
+    summary: "How a growing agency used AIGENTIC Flows to manage hierarchy across branches.",
     readingTime: "8 min read",
   },
   {

@@ -41,10 +41,10 @@ export function FeaturesPageClient() {
       <FeatureShowcase
         eyebrow="AI Executive Assistant"
         title="Insights and recommendations, before you ask"
-        description="AIMP synthesizes activity across every module into one daily briefing — insights, business health, and recommended next actions."
+        description="AIGENTIC Flows synthesizes activity across every module into one daily briefing — insights, business health, and recommended next actions."
         bullets={["AI-generated insights", "Business health scoring", "Recommended next actions"]}
         visual={
-          <ScreenshotFrame label="app.aimp.io/ai">
+          <ScreenshotFrame label="app.aigenticflows.com/ai">
             <AIExecutiveBriefing />
           </ScreenshotFrame>
         }
@@ -58,7 +58,7 @@ export function FeaturesPageClient() {
         description="Track leads, clients, and follow-ups from first contact through close, with notes and history shared across your team."
         bullets={["Lead pipeline", "Client records", "Follow-ups", "Shared notes"]}
         visual={
-          <ScreenshotFrame label="app.aimp.io/crm">
+          <ScreenshotFrame label="app.aigenticflows.com/crm">
             <SalesPipelineCard />
           </ScreenshotFrame>
         }
@@ -70,7 +70,7 @@ export function FeaturesPageClient() {
         description="Build automations visually with triggers, conditions, and actions — no code required."
         bullets={["Visual automation builder", "Triggers", "Actions", "Conditions"]}
         visual={
-          <ScreenshotFrame label="app.aimp.io/automation">
+          <ScreenshotFrame label="app.aigenticflows.com/automation">
             <WorkflowBuilderVisual />
           </ScreenshotFrame>
         }
@@ -84,7 +84,7 @@ export function FeaturesPageClient() {
         description="Track KPIs, revenue, and forecasts across your agency, branch, and team — no waiting for a monthly report."
         bullets={["KPIs", "Revenue", "Forecasts", "Performance"]}
         visual={
-          <ScreenshotFrame label="app.aimp.io/analytics">
+          <ScreenshotFrame label="app.aigenticflows.com/analytics">
             <RevenueChartCard />
           </ScreenshotFrame>
         }
@@ -96,7 +96,7 @@ export function FeaturesPageClient() {
         description="Move candidates from application to onboarding with every stage visible to the whole team."
         bullets={["Candidates", "Pipeline", "Interviews", "Onboarding"]}
         visual={
-          <ScreenshotFrame label="app.aimp.io/recruitment">
+          <ScreenshotFrame label="app.aigenticflows.com/recruitment">
             <RecruitmentVisual />
           </ScreenshotFrame>
         }
@@ -110,7 +110,7 @@ export function FeaturesPageClient() {
         description="Build email sequences and nurture campaigns that keep leads warm without manual follow-up."
         bullets={["Campaigns", "Email", "Lead nurturing", "Sequences"]}
         visual={
-          <ScreenshotFrame label="app.aimp.io/marketing">
+          <ScreenshotFrame label="app.aigenticflows.com/marketing">
             <MarketingVisual />
           </ScreenshotFrame>
         }
@@ -122,7 +122,7 @@ export function FeaturesPageClient() {
         description="Email, messenger, SMS, and notifications — all in a single, shared communication hub."
         bullets={["Email", "Messenger", "SMS", "Notifications"]}
         visual={
-          <ScreenshotFrame label="app.aimp.io/messages">
+          <ScreenshotFrame label="app.aigenticflows.com/messages">
             <MessagingVisual />
           </ScreenshotFrame>
         }
@@ -134,7 +134,7 @@ export function FeaturesPageClient() {
 
       <CTASection
         headline="Ready to work smarter?"
-        subtitle="Start your free 14-day trial, or book a demo to see AIMP configured for your business."
+        subtitle="Start your free 14-day trial, or book a demo to see AIGENTIC Flows configured for your business."
         onPrimaryClick={() => setIsTrialOpen(true)}
         secondaryLabel="Book a Demo"
       />

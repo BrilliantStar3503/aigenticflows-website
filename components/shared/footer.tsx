@@ -59,7 +59,7 @@ export function Footer() {
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">
             <div className="flex items-center gap-2">
               <div className="h-5 w-5 rounded-md bg-brand-red" />
-              <span className="text-[15px] font-bold tracking-tight text-neutral-900">AIMP</span>
+              <span className="text-[15px] font-bold tracking-tight text-neutral-900">AIGENTIC Flows</span>
             </div>
             <p className="mt-3 max-w-[240px] text-[12.5px] leading-relaxed text-neutral-500">
               The AI-powered business operating platform for service-based organizations.
@@ -150,7 +150,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-neutral-100 pt-8 sm:flex-row">
-          <span className="text-[12px] text-neutral-400">© 2026 AIMP. All rights reserved.</span>
+          <span className="text-[12px] text-neutral-400">© 2026 AIGENTIC Flows. All rights reserved.</span>
           <div className="flex items-center gap-3">
             {SOCIAL_LINKS.map((social) => (
               <a

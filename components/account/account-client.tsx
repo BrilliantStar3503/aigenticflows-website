@@ -69,7 +69,7 @@ export function AccountClient({ user, configError }: AccountClientProps) {
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-red">
           <div className="h-2.5 w-2.5 rounded-[2px] bg-white" />
         </div>
-        <span className="text-sm font-bold text-neutral-900">AIMP</span>
+        <span className="text-sm font-bold text-neutral-900">AIGENTIC Flows</span>
       </Link>
 
       {user && (

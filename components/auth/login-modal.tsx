@@ -38,7 +38,7 @@ function LoginView({
           <h2 id="login-modal-title" className="text-lg font-bold text-neutral-900">
             Welcome back
           </h2>
-          <p className="text-[12.5px] text-neutral-500">Sign in to your AIMP workspace.</p>
+          <p className="text-[12.5px] text-neutral-500">Sign in to your AIGENTIC Flows workspace.</p>
         </div>
       </div>
 

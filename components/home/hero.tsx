@@ -69,7 +69,7 @@ export function Hero() {
               custom={0.28}
               className="mt-6 max-w-[420px] text-[17px] leading-relaxed text-neutral-500"
             >
-              AIMP is the AI-powered operating platform that automates
+              AIGENTIC Flows is the AI-powered operating platform that automates
               operations, engages clients, and drives growth — all from one
               intelligent workspace.
             </motion.p>
@@ -86,7 +86,7 @@ export function Hero() {
               </AimpButton>
               <AimpButton variant="secondary">
                 <Play size={14} className="text-brand-red" />
-                See AIMP in Action
+                See AIGENTIC Flows in Action
               </AimpButton>
             </motion.div>
 

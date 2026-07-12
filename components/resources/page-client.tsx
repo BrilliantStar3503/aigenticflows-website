@@ -41,7 +41,7 @@ export function ResourcesPageClient() {
 
       <CTASection
         headline="Start learning. Start growing."
-        subtitle="Everything you need to get the most out of AIMP, in one place."
+        subtitle="Everything you need to get the most out of AIGENTIC Flows, in one place."
         onPrimaryClick={() => setIsTrialOpen(true)}
         secondaryLabel="Browse Documentation"
       />

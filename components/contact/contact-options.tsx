@@ -21,7 +21,7 @@ export function ContactOptions({ onStartTrialClick }: ContactOptionsProps) {
         <ContactCard
           icon={Rocket}
           title="Start Free Trial"
-          description="Create your workspace immediately and explore AIMP hands-on."
+          description="Create your workspace immediately and explore AIGENTIC Flows hands-on."
           ctaLabel="Start Free Trial"
           ctaHref="#"
           onCtaClick={onStartTrialClick}

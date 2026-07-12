@@ -10,7 +10,7 @@ export function Stats() {
     <section className="mx-auto max-w-[1600px] px-4 sm:px-6 py-20 lg:px-14">
       <div className="mx-auto max-w-[560px] text-center">
         <h2 className="text-[32px] font-bold tracking-tight text-neutral-900">
-          Why customers choose AIMP
+          Why customers choose AIGENTIC Flows
         </h2>
       </div>
 

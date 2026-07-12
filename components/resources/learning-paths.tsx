@@ -3,7 +3,7 @@ import { Building2, Headset, Settings, TrendingUp, UserPlus } from "lucide-react
 const PATHS = [
   {
     icon: UserPlus,
-    title: "New to AIMP",
+    title: "New to AIGENTIC Flows",
     time: "45 min",
     modules: 6,
     progress: 0,

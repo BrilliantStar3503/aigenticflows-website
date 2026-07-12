@@ -36,7 +36,7 @@ export function Vision() {
           </svg>
 
           <div className="animate-core-pulse rounded-2xl bg-brand-red px-10 py-5 text-center">
-            <span className="text-[16px] font-bold text-white">AIMP Core</span>
+            <span className="text-[16px] font-bold text-white">AIGENTIC Flows Core</span>
           </div>
 
           <span className="mt-6 max-w-[420px] text-center text-[13px] leading-relaxed text-neutral-500">

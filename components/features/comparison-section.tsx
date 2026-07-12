@@ -23,7 +23,7 @@ export function ComparisonSection() {
           </div>
           <div className="hidden sm:block" />
           <div className="hidden pb-3 text-center text-[11px] font-semibold uppercase tracking-wider text-brand-red sm:block">
-            AIMP
+            AIGENTIC Flows
           </div>
 
           {COMPARISONS.map((row) => (

@@ -17,7 +17,7 @@ export function JourneyTimeline() {
           The full customer journey, automated
         </h2>
         <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">
-          AIMP follows every relationship from first contact to long-term growth.
+          AIGENTIC Flows follows every relationship from first contact to long-term growth.
         </p>
       </div>
 

@@ -47,7 +47,7 @@ function TopBar({
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-red">
           <div className="h-2.5 w-2.5 rounded-[2px] bg-white" />
         </div>
-        <span className="text-sm font-bold text-neutral-900">AIMP</span>
+        <span className="text-sm font-bold text-neutral-900">AIGENTIC Flows</span>
       </Link>
 
       {showActions && (
@@ -216,7 +216,7 @@ export function DashboardClient({ state, email, organizationName, workspaceName,
           <EmptyState
             icon={Building2}
             title="No workspace yet"
-            description="Complete the Start Free Trial flow to provision your AIMP workspace."
+            description="Complete the Start Free Trial flow to provision your AIGENTIC Flows workspace."
             actionLabel="Return to homepage"
             onAction={() => router.push("/")}
           />

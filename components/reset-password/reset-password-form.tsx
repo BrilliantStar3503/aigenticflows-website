@@ -41,7 +41,7 @@ export function ResetPasswordForm() {
         Set a new password
       </h1>
       <p className="mt-1 text-[12.5px] leading-relaxed text-neutral-500">
-        Choose a new password for your AIMP account.
+        Choose a new password for your AIGENTIC Flows account.
       </p>
 
       <form
