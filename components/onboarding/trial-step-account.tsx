@@ -179,11 +179,11 @@ export function TrialStepAccount({ initialData, onContinue }: TrialStepAccountPr
           />
           <span>
             I agree to the{" "}
-            <a href="#" className="font-semibold text-brand-red hover:underline">
+            <a href="/terms" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-red hover:underline">
               Terms
             </a>{" "}
             and{" "}
-            <a href="#" className="font-semibold text-brand-red hover:underline">
+            <a href="/privacy" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-red hover:underline">
               Privacy Policy
             </a>
             .

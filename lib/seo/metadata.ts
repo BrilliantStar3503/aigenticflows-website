@@ -76,6 +76,18 @@ export const PAGE_METADATA = {
       "Talk to our team, book a demo, or start your free trial. We're here to help you modernize your business with AIGENTIC Flows.",
     path: "/contact",
   },
+  privacy: {
+    title: "Privacy Policy — AIGENTIC Flows",
+    description:
+      "How AIGENTIC Flows collects, uses, and protects information across our website and business operating platform.",
+    path: "/privacy",
+  },
+  terms: {
+    title: "Terms of Service — AIGENTIC Flows",
+    description:
+      "The terms governing your access to and use of the AIGENTIC Flows website and business operating platform.",
+    path: "/terms",
+  },
 } as const satisfies Record<string, PageMetadataInput>;
 
 export { SITE_URL };
