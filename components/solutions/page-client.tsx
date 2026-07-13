@@ -25,8 +25,8 @@ const WHY_AIMP = [
   },
   {
     icon: Sparkles,
-    title: "AI-powered",
-    description: "Built-in intelligence that drafts, flags, and automates as you work.",
+    title: "Automated",
+    description: "Built-in workflow and marketing automation that runs as you work.",
     tone: "red" as const,
   },
   {
@@ -51,7 +51,7 @@ export function SolutionsPageClient() {
   return (
     <main className="bg-white">
       <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
       <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
 
       <SolutionsHero onStartTrialClick={() => setIsTrialOpen(true)} />

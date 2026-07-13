@@ -6,37 +6,37 @@ const CATEGORIES = [
     icon: FileText,
     title: "Documentation",
     description: "Step-by-step product documentation.",
-    count: "120+ articles",
+    count: "Growing library",
   },
   {
     icon: BookOpen,
     title: "Guides",
     description: "Implementation guides and tutorials.",
-    count: "38 guides",
+    count: "New guides added regularly",
   },
   {
     icon: TrendingUp,
     title: "Case Studies",
     description: "Real customer success stories.",
-    count: "12 stories",
+    count: "Coming soon",
   },
   {
     icon: Layout,
     title: "Templates",
     description: "Downloadable business templates.",
-    count: "24 templates",
+    count: "Coming soon",
   },
   {
     icon: PlayCircle,
     title: "Videos",
     description: "Product walkthroughs and training.",
-    count: "56 videos",
+    count: "Coming soon",
   },
   {
     icon: Newspaper,
     title: "Blog",
     description: "Industry insights and updates.",
-    count: "80+ posts",
+    count: "Coming soon",
   },
 ];
 

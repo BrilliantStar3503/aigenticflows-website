@@ -26,8 +26,8 @@ const FEATURED = [
   {
     icon: Sparkles,
     category: "Guide",
-    title: "Using AI Executive Briefing",
-    summary: "Get the most out of your daily AI-generated insights and recommendations.",
+    title: "Setting Up Your Solution Pack",
+    summary: "How industry Solution Packs like Insurance add capability on top of the Core Platform.",
     readingTime: "5 min read",
   },
   {

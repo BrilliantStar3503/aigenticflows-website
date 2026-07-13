@@ -29,7 +29,7 @@ export function LegalShell({
   return (
     <main className="bg-white">
       <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
       <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
 
       <article className="mx-auto max-w-3xl px-6 py-20">

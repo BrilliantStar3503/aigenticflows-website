@@ -1,9 +1,8 @@
 const SEGMENTS = [
-  { label: "Facebook Ads", value: 42, color: "#E60012" },
-  { label: "Google Ads", value: 28, color: "#C8102E" },
-  { label: "Referral", value: 16, color: "#F5C248" },
-  { label: "Website", value: 10, color: "#D1D5DB" },
-  { label: "Others", value: 4, color: "#F0F0F0" },
+  { label: "Facebook Ads", value: 48, color: "#E60012" },
+  { label: "Referral", value: 22, color: "#C8102E" },
+  { label: "Website", value: 18, color: "#F5C248" },
+  { label: "Others", value: 12, color: "#D1D5DB" },
 ];
 
 const RADIUS = 30;

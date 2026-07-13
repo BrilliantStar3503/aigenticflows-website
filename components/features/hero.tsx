@@ -32,7 +32,7 @@ export function FeaturesHero({ onStartTrialClick }: FeaturesHeroProps) {
             >
               Everything your business needs.
               <br />
-              <span className="text-brand-red">One</span> intelligent platform.
+              <span className="text-brand-red">One</span> connected platform.
             </motion.h1>
 
             <motion.p
@@ -41,7 +41,7 @@ export function FeaturesHero({ onStartTrialClick }: FeaturesHeroProps) {
               transition={{ duration: 0.4, delay: 0.16 }}
               className="mt-6 max-w-[440px] text-[16px] leading-relaxed text-neutral-600"
             >
-              AIGENTIC Flows combines CRM, AI, automation, analytics, communication,
+              AIGENTIC Flows combines CRM, automation, analytics, communication,
               workflows, and operations into one unified platform — so your
               team stops switching tools and starts getting work done.
             </motion.p>

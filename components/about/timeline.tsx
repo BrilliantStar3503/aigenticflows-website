@@ -13,8 +13,8 @@ const STAGES = [
   },
   {
     icon: Sparkles,
-    title: "AI Opportunity",
-    description: "AI made it possible to automate the busywork that used to require an entire operations team.",
+    title: "The Automation Opportunity",
+    description: "Modern automation made it possible to eliminate the busywork that used to require an entire operations team.",
   },
   {
     icon: Boxes,

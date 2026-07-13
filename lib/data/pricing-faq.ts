@@ -2,7 +2,7 @@ export const PRICING_FAQ_ITEMS = [
   {
     question: "Can I change plans later?",
     answer:
-      "Yes. You can move between plans at any time as your business grows — our team will help you migrate without disrupting your workspace.",
+      "Yes. As your business grows, your account team will move you to a new plan without disrupting your workspace.",
   },
   {
     question: "Is there a free trial?",
@@ -15,7 +15,7 @@ export const PRICING_FAQ_ITEMS = [
   },
   {
     question: "Can I cancel anytime?",
-    answer: "Yes. There are no long-term contracts required, and you can cancel your subscription at any time.",
+    answer: "Yes. There are no long-term contracts required — reach out to your account team to cancel whenever you need to.",
   },
   {
     question: "Can I migrate my existing CRM?",

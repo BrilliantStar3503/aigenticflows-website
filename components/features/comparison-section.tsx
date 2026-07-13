@@ -2,9 +2,9 @@ import { ArrowRight, Check, X } from "lucide-react";
 
 const COMPARISONS = [
   { before: "Multiple tools", after: "One platform" },
-  { before: "Manual work", after: "AI automation" },
-  { before: "Disconnected data", after: "Unified intelligence" },
-  { before: "Static reports", after: "Real-time insights" },
+  { before: "Manual follow-ups", after: "Automated sequences" },
+  { before: "Disconnected data", after: "One unified workspace" },
+  { before: "Static reports", after: "Real-time dashboards" },
 ];
 
 export function ComparisonSection() {

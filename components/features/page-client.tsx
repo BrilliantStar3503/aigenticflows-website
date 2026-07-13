@@ -31,7 +31,7 @@ export function FeaturesPageClient() {
   return (
     <main className="bg-white">
       <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
       <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
 
       <FeaturesHero onStartTrialClick={() => setIsTrialOpen(true)} />
@@ -39,12 +39,12 @@ export function FeaturesPageClient() {
       <CapabilityGrid />
 
       <FeatureShowcase
-        eyebrow="AI Executive Assistant"
-        title="Insights and recommendations, before you ask"
-        description="AIGENTIC Flows synthesizes activity across every module into one daily briefing — insights, business health, and recommended next actions."
-        bullets={["AI-generated insights", "Business health scoring", "Recommended next actions"]}
+        eyebrow="Notifications & Activity"
+        title="What needs your attention, in one place"
+        description="A unified calendar and notification feed brings together Tasks, Contact activity, and updates across Companies, Deals, and your team — so nothing falls through the cracks."
+        bullets={["Unified calendar", "Real-time notifications", "Activity timeline"]}
         visual={
-          <ScreenshotFrame label="app.aigenticflows.com/ai">
+          <ScreenshotFrame label="app.aigenticflows.com/calendar">
             <AIExecutiveBriefing />
           </ScreenshotFrame>
         }

@@ -1,30 +1,28 @@
 import { Check, Minus } from "lucide-react";
 
-type Availability = boolean | "partial";
+type Availability = boolean | string;
 
 interface FeatureRow {
   label: string;
   starter: Availability;
-  professional: Availability;
+  growth: Availability;
+  business: Availability;
   enterprise: Availability;
 }
 
 const ROWS: FeatureRow[] = [
-  { label: "CRM", starter: true, professional: true, enterprise: true },
-  { label: "AI Assistant", starter: false, professional: true, enterprise: true },
-  { label: "Workflow Automation", starter: "partial", professional: true, enterprise: true },
-  { label: "Recruitment", starter: false, professional: true, enterprise: true },
-  { label: "Marketing Automation", starter: false, professional: true, enterprise: true },
-  { label: "Analytics", starter: "partial", professional: true, enterprise: true },
-  { label: "Reports", starter: true, professional: true, enterprise: true },
-  { label: "Calendar", starter: true, professional: true, enterprise: true },
-  { label: "Appointments", starter: true, professional: true, enterprise: true },
-  { label: "Messaging", starter: "partial", professional: true, enterprise: true },
-  { label: "Multi-user", starter: true, professional: true, enterprise: true },
-  { label: "Custom Branding", starter: false, professional: false, enterprise: true },
-  { label: "API Access", starter: false, professional: false, enterprise: true },
-  { label: "Priority Support", starter: false, professional: true, enterprise: true },
-  { label: "Enterprise Security", starter: false, professional: false, enterprise: true },
+  { label: "Contacts, Companies, Deals & Pipeline", starter: true, growth: true, business: true, enterprise: true },
+  { label: "Team directory, Tasks, Calendar", starter: true, growth: true, business: true, enterprise: true },
+  { label: "Tags & activity history", starter: true, growth: true, business: true, enterprise: true },
+  { label: "Custom branding", starter: true, growth: true, business: true, enterprise: true },
+  { label: "Industry Solution Packs", starter: false, growth: "1 included", business: "up to 3", enterprise: "unlimited" },
+  { label: "Marketing Automation", starter: false, growth: true, business: true, enterprise: true },
+  { label: "Facebook Lead Ads Capture", starter: false, growth: true, business: true, enterprise: true },
+  { label: "Advanced Reporting", starter: false, growth: false, business: true, enterprise: true },
+  { label: "Multi-branch Hierarchy", starter: false, growth: false, business: false, enterprise: true },
+  { label: "API Access", starter: false, growth: false, business: false, enterprise: true },
+  { label: "Priority Support", starter: false, growth: false, business: true, enterprise: true },
+  { label: "Dedicated Onboarding", starter: false, growth: false, business: false, enterprise: true },
 ];
 
 function AvailabilityMark({ value }: { value: Availability }) {
@@ -35,15 +33,16 @@ function AvailabilityMark({ value }: { value: Availability }) {
       </span>
     );
   }
-  if (value === "partial") {
-    return <span className="mx-auto block text-[11px] font-medium text-neutral-500">Limited</span>;
+  if (typeof value === "string") {
+    return <span className="mx-auto block text-[11px] font-medium text-neutral-500">{value}</span>;
   }
   return <Minus size={13} className="mx-auto text-neutral-300" />;
 }
 
-const PLANS: { key: "starter" | "professional" | "enterprise"; label: string; highlight?: boolean }[] = [
+const PLANS: { key: "starter" | "growth" | "business" | "enterprise"; label: string; highlight?: boolean }[] = [
   { key: "starter", label: "Starter" },
-  { key: "professional", label: "Professional", highlight: true },
+  { key: "growth", label: "Growth" },
+  { key: "business", label: "Business", highlight: true },
   { key: "enterprise", label: "Enterprise" },
 ];
 
@@ -67,13 +66,16 @@ export function ComparisonTable() {
                 <th className="px-6 py-5 text-[11.5px] font-semibold uppercase tracking-wider text-neutral-400">
                   Feature
                 </th>
-                <th className="w-[140px] px-4 py-5 text-center text-[13px] font-bold text-neutral-900">
+                <th className="w-[120px] px-4 py-5 text-center text-[13px] font-bold text-neutral-900">
                   Starter
                 </th>
-                <th className="w-[140px] bg-brand-pink/50 px-4 py-5 text-center text-[13px] font-bold text-brand-red">
-                  Professional
+                <th className="w-[120px] px-4 py-5 text-center text-[13px] font-bold text-neutral-900">
+                  Growth
                 </th>
-                <th className="w-[140px] px-4 py-5 text-center text-[13px] font-bold text-neutral-900">
+                <th className="w-[120px] bg-brand-pink/50 px-4 py-5 text-center text-[13px] font-bold text-brand-red">
+                  Business
+                </th>
+                <th className="w-[120px] px-4 py-5 text-center text-[13px] font-bold text-neutral-900">
                   Enterprise
                 </th>
               </tr>
@@ -85,8 +87,11 @@ export function ComparisonTable() {
                   <td className="px-4 py-4 text-center">
                     <AvailabilityMark value={row.starter} />
                   </td>
+                  <td className="px-4 py-4 text-center">
+                    <AvailabilityMark value={row.growth} />
+                  </td>
                   <td className="bg-brand-pink/20 px-4 py-4 text-center">
-                    <AvailabilityMark value={row.professional} />
+                    <AvailabilityMark value={row.business} />
                   </td>
                   <td className="px-4 py-4 text-center">
                     <AvailabilityMark value={row.enterprise} />

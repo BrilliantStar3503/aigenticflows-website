@@ -10,8 +10,8 @@ const BENEFITS = [
   },
   {
     icon: Sparkles,
-    title: "AI-first workflows",
-    description: "Intelligence built into every module, not bolted on.",
+    title: "Connected workflows",
+    description: "Automation built into every module, not bolted on.",
     tone: "red" as const,
   },
   {

@@ -10,26 +10,36 @@ const TIERS: PricingTier[] = [
     billingLabel: "Tailored to your team size",
     ctaLabel: "Start Free Trial",
     features: [
-      "Core CRM",
-      "Task management",
-      "Calendar",
-      "Up to 5 team members",
+      "Core Platform — Contacts, Companies, Deals & Pipeline",
+      "Team directory, Tasks, and unified Calendar",
+      "Shared Tags and activity history",
       "Email support",
     ],
   },
   {
-    name: "Professional",
-    description: "For growing agencies that need automation and AI.",
+    name: "Growth",
+    description: "For teams ready to add an industry Solution Pack.",
+    price: "Custom",
+    billingLabel: "Tailored to your team size",
+    ctaLabel: "Start Free Trial",
+    features: [
+      "Everything in Starter",
+      "1 industry Solution Pack (currently: Insurance)",
+      "Marketing automation and email campaigns",
+      "Facebook Lead Ads capture",
+    ],
+  },
+  {
+    name: "Business",
+    description: "For multi-line organizations running more than one Solution Pack.",
     price: "Custom",
     billingLabel: "Tailored to your team size",
     ctaLabel: "Start Free Trial",
     recommended: true,
     features: [
-      "Everything in Starter",
-      "AI Executive Assistant",
-      "Workflow automation",
-      "Marketing automation",
-      "Advanced analytics",
+      "Everything in Growth",
+      "Up to 3 industry Solution Packs",
+      "Advanced reporting",
       "Priority support",
     ],
   },
@@ -40,12 +50,12 @@ const TIERS: PricingTier[] = [
     billingLabel: "Contact sales for a tailored quote",
     ctaLabel: "Contact Sales",
     features: [
-      "Everything in Professional",
+      "Everything in Business",
+      "Unlimited Solution Packs",
       "Multi-branch hierarchy",
       "Custom branding",
       "API access",
       "Dedicated onboarding",
-      "Enterprise-grade security",
     ],
   },
 ];
@@ -58,7 +68,7 @@ export function PricingCards({ onStartTrialClick }: PricingCardsProps) {
   return (
     <section className="mx-auto max-w-[1200px] px-4 sm:px-6 pb-20 pt-10 lg:px-14">
       <h2 className="sr-only">Pricing plans</h2>
-      <div className="grid grid-cols-1 gap-7 lg:grid-cols-3 lg:items-start">
+      <div className="grid grid-cols-1 gap-7 lg:grid-cols-4 lg:items-start">
         {TIERS.map((tier) => (
           <PricingCard
             key={tier.name}

@@ -15,18 +15,18 @@ import {
 import { CapabilityCard } from "@/components/features/capability-card";
 
 const CAPABILITIES = [
-  { icon: Users, title: "CRM", description: "Track every lead and client from first contact to close." },
-  { icon: Sparkles, title: "AI Assistant", description: "Drafts, summarizes, and flags what needs your attention." },
-  { icon: Zap, title: "Workflow Automation", description: "Build automations without writing a line of code." },
+  { icon: Users, title: "CRM", description: "Contacts, Companies, and Deals — track every lead from first contact to close." },
+  { icon: Sparkles, title: "Companies & Pipeline", description: "A configurable sales pipeline with board and table views." },
+  { icon: Zap, title: "Workflow Automation", description: "Automated sequences for follow-ups and nurturing." },
   { icon: BarChart3, title: "Analytics", description: "Real-time performance across your whole organization." },
-  { icon: UserPlus, title: "Recruitment", description: "Run a structured pipeline for growing your team." },
+  { icon: UserPlus, title: "Recruitment", description: "A structured candidate pipeline — included with the Insurance Solution Pack." },
   { icon: Megaphone, title: "Marketing", description: "Automated campaigns and nurture sequences built in." },
   { icon: Calendar, title: "Calendar", description: "One shared calendar across your entire team." },
   { icon: CheckSquare, title: "Tasks", description: "Assign, track, and complete work without the noise." },
   { icon: CalendarClock, title: "Appointments", description: "Booking and reminders that keep your day on track." },
-  { icon: MessageCircle, title: "Messaging", description: "Email, SMS, and chat in a single inbox." },
+  { icon: MessageCircle, title: "Messaging", description: "Email campaigns with bounce suppression and one-click unsubscribe." },
   { icon: FileText, title: "Reports", description: "Shareable reports generated automatically." },
-  { icon: FolderOpen, title: "Document Management", description: "Store and organize every client document securely." },
+  { icon: FolderOpen, title: "Facebook Lead Capture", description: "Leads from your connected Facebook Page arrive in real time." },
 ];
 
 export function CapabilityGrid() {

@@ -1,9 +1,9 @@
 import { CheckSquare, Sparkles, Square } from "lucide-react";
 
-const AI_INSIGHTS = [
-  "Drafted 3 follow-up emails for stalled leads",
+const AUTOMATION_ACTIVITY = [
+  "Sent 3 follow-up reminders for stalled leads",
   "Flagged 2 renewals at risk this week",
-  "Summarized yesterday's client calls",
+  "Logged yesterday's client calls to the activity timeline",
 ];
 
 const TASKS = [
@@ -20,16 +20,16 @@ export function ProductivityPanel() {
         <div className="flex h-6 w-6 items-center justify-center rounded-md bg-brand-red">
           <Sparkles size={13} className="text-white" />
         </div>
-        <span className="text-[13px] font-bold text-neutral-900">AI Workspace</span>
+        <span className="text-[13px] font-bold text-neutral-900">Workspace</span>
       </div>
 
       <div className="p-5">
         <div className="rounded-xl bg-brand-pink p-4">
           <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-red">
-            AI activity today
+            Automation activity today
           </span>
           <div className="mt-2.5 space-y-2">
-            {AI_INSIGHTS.map((insight) => (
+            {AUTOMATION_ACTIVITY.map((insight) => (
               <div key={insight} className="flex items-start gap-2 text-[12px] leading-relaxed text-neutral-700">
                 <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-brand-red/60" />
                 {insight}

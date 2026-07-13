@@ -49,7 +49,7 @@ export const PAGE_METADATA = {
   features: {
     title: "Features — Everything Your Business Needs",
     description:
-      "CRM, AI Executive Assistant, workflow automation, analytics, recruitment, marketing, and communication — unified in one intelligent platform.",
+      "CRM, workflow automation, analytics, recruitment, marketing, and communication — unified in one connected platform.",
     path: "/features",
   },
   pricing: {

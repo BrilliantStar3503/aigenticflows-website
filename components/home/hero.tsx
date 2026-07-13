@@ -31,7 +31,7 @@ export function Hero() {
   return (
     <section className="relative bg-white">
       <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
       <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
 
       <div className="mx-auto max-w-[1600px] px-4 pb-8 pt-9 sm:px-6 lg:px-14">
@@ -45,7 +45,7 @@ export function Hero() {
               className="inline-flex items-center gap-1.5 rounded-full border border-[#FEE2E2] bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-red"
             >
               <Sparkles size={11} />
-              AI business operating platform
+              Business operating platform
             </motion.span>
 
             <motion.h1
@@ -69,9 +69,9 @@ export function Hero() {
               custom={0.28}
               className="mt-6 max-w-[420px] text-[17px] leading-relaxed text-neutral-500"
             >
-              AIGENTIC Flows is the AI-powered operating platform that automates
+              AIGENTIC Flows is the operating platform that automates
               operations, engages clients, and drives growth — all from one
-              intelligent workspace.
+              connected workspace.
             </motion.p>
 
             <motion.div

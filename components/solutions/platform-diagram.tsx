@@ -21,7 +21,7 @@ const INDUSTRY_LABELS = [
 const MODULES = [
   { label: "CRM", icon: Users },
   { label: "Automation", icon: Zap },
-  { label: "AI", icon: Sparkles },
+  { label: "Pipeline", icon: Sparkles },
   { label: "Analytics", icon: BarChart3 },
   { label: "Tasks", icon: CheckSquare },
   { label: "Calendar", icon: Calendar },
@@ -35,10 +35,11 @@ export function PlatformDiagram() {
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-14">
         <div className="mx-auto max-w-[560px] text-center">
           <h2 className="text-[32px] font-bold tracking-tight text-neutral-900">
-            One core platform. Every industry.
+            One core platform. Built to expand.
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">
-            The same AIGENTIC Flows core powers every implementation — only the workflows change.
+            The same AIGENTIC Flows core works for any service business — Solution Packs add
+            industry-specific depth on top.
           </p>
         </div>
 

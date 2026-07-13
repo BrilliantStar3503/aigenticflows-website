@@ -31,7 +31,7 @@ export function ContactOptions({ onStartTrialClick }: ContactOptionsProps) {
           title="Support"
           description="Already a customer? Contact our support team for help."
           ctaLabel="Contact Support"
-          ctaHref="#"
+          ctaHref="#contact-form"
         />
       </div>
     </section>

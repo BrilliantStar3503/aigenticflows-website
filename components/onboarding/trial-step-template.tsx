@@ -11,7 +11,7 @@ const TEMPLATES = [
   {
     id: "insurance",
     title: "Insurance Agency",
-    description: "CRM + Recruitment + AI",
+    description: "CRM + Recruitment + Policies",
     icon: Shield,
     recommended: true,
   },

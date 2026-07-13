@@ -13,7 +13,7 @@ export function Mission() {
           spreadsheets, chat threads, and point solutions that were never
           designed to talk to each other. AIGENTIC Flows exists to unify operations —
           CRM, recruitment, marketing, analytics, and communication — into
-          one intelligent platform, so businesses can focus on growth instead
+          one connected platform, so businesses can focus on growth instead
           of stitching tools together.
         </p>
 

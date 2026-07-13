@@ -16,8 +16,7 @@ const SIDEBAR_ITEMS = [
   { label: "CRM", icon: Users, active: false },
   { label: "Automation", icon: Zap, active: false },
   { label: "Analytics", icon: BarChart3, active: false },
-  { label: "AI Assistant", icon: Sparkles, active: false, badge: "3" },
-  { label: "Tasks", icon: CheckSquare, active: false },
+  { label: "Tasks", icon: CheckSquare, active: false, badge: "3" },
   { label: "Calendar", icon: Calendar, active: false },
   { label: "Reports", icon: FileText, active: false },
   { label: "Settings", icon: Settings, active: false },
@@ -62,7 +61,7 @@ export function DashboardSidebar() {
         <Sparkles size={13} className="flex-shrink-0 text-brand-red" />
         <div className="min-w-0">
           <div className="truncate text-[10px] font-semibold text-neutral-800">
-            Brilliant Star Quartz
+            Meridian Advisory
           </div>
           <div className="text-[9px] text-neutral-400">Agency</div>
         </div>

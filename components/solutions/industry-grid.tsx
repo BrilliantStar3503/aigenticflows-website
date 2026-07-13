@@ -14,11 +14,11 @@ const INDUSTRIES: Industry[] = [
   {
     icon: Shield,
     name: "Insurance Agencies",
-    description: "Recruit advisors, manage policies, and track commissions in one place.",
+    description: "Recruit advisors, manage policies, and track production in one place.",
     primaryWorkflow: "Lead → Advisor → Policy → Renewal",
     exampleKpi: "Policies renewed on time",
-    exampleAi: "Flags policies at risk of lapsing",
-    modules: ["CRM", "Recruitment", "Analytics", "AI Assistant"],
+    status: "Live today",
+    modules: ["CRM", "Recruitment", "Policies", "Production"],
   },
   {
     icon: LineChart,
@@ -26,8 +26,8 @@ const INDUSTRIES: Industry[] = [
     description: "Manage client portfolios, reviews, and compliance touchpoints.",
     primaryWorkflow: "Prospect → Onboard → Review → Retain",
     exampleKpi: "Client review completion rate",
-    exampleAi: "Drafts portfolio review summaries",
-    modules: ["CRM", "Calendar", "Reports", "AI Assistant"],
+    status: "On the roadmap",
+    modules: ["CRM", "Calendar", "Reports"],
   },
   {
     icon: Building2,
@@ -35,8 +35,8 @@ const INDUSTRIES: Industry[] = [
     description: "Track listings, buyer leads, and closings from one pipeline.",
     primaryWorkflow: "Listing → Lead → Showing → Close",
     exampleKpi: "Average days on market",
-    exampleAi: "Matches leads to new listings automatically",
-    modules: ["CRM", "Automation", "Messaging", "Analytics"],
+    status: "On the roadmap",
+    modules: ["CRM", "Automation", "Analytics"],
   },
   {
     icon: HeartPulse,
@@ -44,8 +44,8 @@ const INDUSTRIES: Industry[] = [
     description: "Coordinate patient intake, scheduling, and follow-up care.",
     primaryWorkflow: "Intake → Schedule → Visit → Follow-up",
     exampleKpi: "No-show rate",
-    exampleAi: "Sends automated appointment reminders",
-    modules: ["Calendar", "Messaging", "Tasks", "Automation"],
+    status: "On the roadmap",
+    modules: ["Calendar", "Tasks", "Automation"],
   },
   {
     icon: Calculator,
@@ -53,8 +53,8 @@ const INDUSTRIES: Industry[] = [
     description: "Manage client engagements, deadlines, and document requests.",
     primaryWorkflow: "Engagement → Collect → File → Close",
     exampleKpi: "On-time filing rate",
-    exampleAi: "Chases missing client documents automatically",
-    modules: ["Tasks", "Automation", "Reports", "Messaging"],
+    status: "On the roadmap",
+    modules: ["Tasks", "Automation", "Reports"],
   },
   {
     icon: Briefcase,
@@ -62,8 +62,8 @@ const INDUSTRIES: Industry[] = [
     description: "Run engagements, track deliverables, and manage utilization.",
     primaryWorkflow: "Proposal → Engagement → Delivery → Renewal",
     exampleKpi: "Team utilization rate",
-    exampleAi: "Surfaces at-risk project timelines",
-    modules: ["CRM", "Tasks", "Analytics", "Reports"],
+    status: "On the roadmap",
+    modules: ["CRM", "Tasks", "Analytics"],
   },
   {
     icon: GraduationCap,
@@ -71,8 +71,8 @@ const INDUSTRIES: Industry[] = [
     description: "Manage enrollments, cohorts, and certification tracking.",
     primaryWorkflow: "Inquiry → Enroll → Deliver → Certify",
     exampleKpi: "Course completion rate",
-    exampleAi: "Nudges learners who fall behind",
-    modules: ["CRM", "Automation", "Calendar", "Analytics"],
+    status: "On the roadmap",
+    modules: ["CRM", "Automation", "Calendar"],
   },
   {
     icon: Users,
@@ -80,8 +80,8 @@ const INDUSTRIES: Industry[] = [
     description: "Run client work, billing, and operations from one system.",
     primaryWorkflow: "Inquiry → Proposal → Delivery → Invoice",
     exampleKpi: "Billable utilization",
-    exampleAi: "Drafts client status updates automatically",
-    modules: ["CRM", "Tasks", "Reports", "AI Assistant"],
+    status: "On the roadmap",
+    modules: ["CRM", "Tasks", "Reports"],
   },
 ];
 
@@ -93,7 +93,8 @@ export function IndustryGrid() {
           Built for how your business actually works
         </h2>
         <p className="mt-3 text-[15px] leading-relaxed text-neutral-600">
-          Every industry gets the same core platform, configured around its own workflows.
+          The Core Platform works for any service business today. Insurance has a dedicated Solution Pack —
+          more industries are on the roadmap.
         </p>
       </div>
 

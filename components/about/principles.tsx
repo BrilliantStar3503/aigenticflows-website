@@ -3,8 +3,8 @@ import { Heart, Layers, Sparkles, Wand2 } from "lucide-react";
 const PRINCIPLES = [
   {
     icon: Sparkles,
-    title: "Built Around AI",
-    description: "Intelligence isn't a feature bolted on top — it's part of how every module works.",
+    title: "Built to Automate",
+    description: "Automation isn't a feature bolted on top — it's part of how every module works.",
     tone: "red" as const,
   },
   {

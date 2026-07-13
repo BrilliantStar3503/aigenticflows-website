@@ -62,7 +62,7 @@ export function Footer() {
               <span className="text-[15px] font-bold tracking-tight text-neutral-900">AIGENTIC Flows</span>
             </div>
             <p className="mt-3 max-w-[240px] text-[12.5px] leading-relaxed text-neutral-500">
-              The AI-powered business operating platform for service-based organizations.
+              The business operating platform for service-based organizations.
             </p>
 
             <form onSubmit={handleSubscribe} className="mt-6 max-w-[260px]">

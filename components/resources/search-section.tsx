@@ -1,6 +1,6 @@
 import { ArrowRight, Search } from "lucide-react";
 
-const RECENT_SEARCHES = ["workflow automation", "AI briefing", "recruitment pipeline"];
+const RECENT_SEARCHES = ["workflow automation", "solution packs", "recruitment pipeline"];
 const POPULAR_TOPICS = ["Getting started", "CRM setup", "Automations", "Analytics", "API access", "Security"];
 const QUICK_LINKS = ["Documentation home", "API reference", "Release notes", "Status page"];
 

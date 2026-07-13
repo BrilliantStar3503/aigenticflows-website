@@ -4,8 +4,8 @@ import { FeatureCard } from "@/components/home/feature-card";
 const FEATURES = [
   {
     icon: Sparkles,
-    title: "AI-Powered",
-    description: "Intelligent insights and automation that drive better decisions.",
+    title: "Automation-Powered",
+    description: "Workflow automation and marketing sequences that drive better outcomes.",
     tone: "dark" as const,
   },
   {
@@ -23,7 +23,7 @@ const FEATURES = [
   {
     icon: ShieldCheck,
     title: "Secure & Reliable",
-    description: "Enterprise-grade security and 99.9% uptime you can trust.",
+    description: "Tenant data isolation enforced at the database layer.",
     tone: "red" as const,
   },
 ];

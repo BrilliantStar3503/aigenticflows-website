@@ -12,6 +12,7 @@ import { ForgotPasswordSuccess } from "@/components/auth/forgot-password-success
 interface LoginModalProps {
   open: boolean;
   onClose: () => void;
+  onStartTrialClick?: () => void;
 }
 
 type AuthView = "login" | "forgot" | "success";
@@ -24,9 +25,11 @@ const viewVariants = {
 function LoginView({
   onForgotPasswordClick,
   onSuccess,
+  onStartTrialClick,
 }: {
   onForgotPasswordClick: () => void;
   onSuccess: () => void;
+  onStartTrialClick?: () => void;
 }) {
   return (
     <div>
@@ -56,15 +59,19 @@ function LoginView({
 
       <p className="mt-6 text-center text-[12.5px] text-neutral-500">
         Don&apos;t have an account?{" "}
-        <a href="#" className="font-semibold text-brand-red hover:underline">
+        <button
+          type="button"
+          onClick={onStartTrialClick}
+          className="font-semibold text-brand-red hover:underline"
+        >
           Start free trial
-        </a>
+        </button>
       </p>
     </div>
   );
 }
 
-export function LoginModal({ open, onClose }: LoginModalProps) {
+export function LoginModal({ open, onClose, onStartTrialClick }: LoginModalProps) {
   const [view, setView] = useState<AuthView>("login");
   const [resetEmail, setResetEmail] = useState("");
 
@@ -97,7 +104,11 @@ export function LoginModal({ open, onClose }: LoginModalProps) {
         transition={{ duration: 0.18, ease: "easeOut" }}
       >
         {view === "login" && (
-          <LoginView onForgotPasswordClick={() => setView("forgot")} onSuccess={onClose} />
+          <LoginView
+            onForgotPasswordClick={() => setView("forgot")}
+            onSuccess={onClose}
+            onStartTrialClick={onStartTrialClick}
+          />
         )}
         {view === "forgot" && (
           <ForgotPasswordModal

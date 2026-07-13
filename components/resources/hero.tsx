@@ -6,7 +6,7 @@ import { AimpButton } from "@/components/ui/button";
 import { ScreenshotFrame } from "@/components/features/screenshot-frame";
 import { TabletScale } from "@/components/shared/tablet-scale";
 
-const DOC_SIDEBAR = ["Getting Started", "Workflows", "AI Assistant", "Recruitment", "API Reference"];
+const DOC_SIDEBAR = ["Getting Started", "Workflows", "Solution Packs", "Recruitment", "API Reference"];
 
 interface ResourcesHeroProps {
   onStartTrialClick: () => void;

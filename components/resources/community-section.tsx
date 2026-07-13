@@ -1,10 +1,10 @@
 import { ArrowRight, BookOpen, Calendar, MessageCircle, Video } from "lucide-react";
 
 const ACTIONS = [
-  { icon: BookOpen, label: "Browse documentation" },
-  { icon: MessageCircle, label: "Contact support" },
-  { icon: Calendar, label: "Book a demo" },
-  { icon: Video, label: "Join webinars" },
+  { icon: BookOpen, label: "Browse documentation", href: "#" },
+  { icon: MessageCircle, label: "Contact support", href: "/contact" },
+  { icon: Calendar, label: "Book a demo", href: "/contact" },
+  { icon: Video, label: "Join webinars", href: "#" },
 ];
 
 export function CommunitySection() {
@@ -24,7 +24,7 @@ export function CommunitySection() {
           {ACTIONS.map((action) => (
             <a
               key={action.label}
-              href="#"
+              href={action.href}
               className="group flex items-center gap-3 rounded-xl border border-neutral-100 bg-white px-4 py-3.5 transition-all duration-150 hover:-translate-y-0.5 hover:border-neutral-200 hover:shadow-[0_8px_24px_rgba(17,17,17,0.06)]"
             >
               <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-brand-pink">
