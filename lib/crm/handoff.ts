@@ -5,12 +5,8 @@
  * its tokens in the URL fragment of a redirect to the CRM's own
  * session-adoption page — the fragment is never sent to (or logged by)
  * either server, only read by client-side JS once it arrives.
- *
- * TODO(branding-migration): CRM_URL fallback still points at the pre-rename
- * "prubsq-aimp" Vercel deployment. Update once the CRM app's production
- * domain is renamed/confirmed (see migration report — manual actions).
  */
-const CRM_URL = process.env.NEXT_PUBLIC_CRM_URL || "https://prubsq-aimp.vercel.app";
+const CRM_URL = process.env.NEXT_PUBLIC_CRM_URL || "https://app.aigenticflows.com";
 
 export function buildCrmHandoffUrl(params: {
   accessToken: string;
