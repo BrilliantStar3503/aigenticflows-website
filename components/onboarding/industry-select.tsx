@@ -83,11 +83,6 @@ export function IndustrySelect({ id, value, onChange }: IndustrySelectProps) {
                   <span className="flex items-center gap-1.5">
                     <span aria-hidden="true">{option.emoji}</span>
                     <span className="text-[13px] font-semibold text-neutral-900">{option.label}</span>
-                    {option.recommended && (
-                      <span className="inline-flex items-center rounded-full bg-brand-red px-1.5 py-0.5 text-[8.5px] font-bold uppercase tracking-wide text-white">
-                        Recommended
-                      </span>
-                    )}
                   </span>
                   <span className="text-[11.5px] leading-snug text-neutral-500">{option.subcategories}</span>
                 </button>

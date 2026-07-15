@@ -9,16 +9,20 @@ export interface IndustryOption {
   emoji: string;
   label: string;
   subcategories: string;
-  recommended?: boolean;
 }
 
 export const INDUSTRY_OPTIONS: IndustryOption[] = [
+  {
+    id: "general",
+    emoji: "🧭",
+    label: "General Workspace",
+    subcategories: "Start with a blank workspace that you can customize for any business.",
+  },
   {
     id: "insurance",
     emoji: "🛡️",
     label: "Insurance",
     subcategories: "Insurance Advisors, Financial Advisors, Agencies, Brokerages",
-    recommended: true,
   },
   {
     id: "real_estate",
