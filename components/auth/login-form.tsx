@@ -38,11 +38,7 @@ export function LoginForm({ onForgotPasswordClick, onSuccess }: LoginFormProps) 
 
         const redirectTarget = new URLSearchParams(window.location.search).get("authRedirect");
         onSuccess();
-        if (redirectTarget) {
-          router.push(redirectTarget);
-        } else {
-          router.refresh();
-        }
+        router.push(redirectTarget || "/dashboard");
       }}
     >
       <div className="flex flex-col gap-1.5">
