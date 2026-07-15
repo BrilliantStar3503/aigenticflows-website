@@ -99,6 +99,7 @@ export function TrialModal({ open, onClose }: TrialModalProps) {
         {step === "template" && (
           <TrialStepTemplate
             initialSelected={template?.id ?? ""}
+            selectedIndustry={workspace.industry}
             onBack={() => goTo("workspace")}
             onContinue={async (selected) => {
               setTemplate(selected);

@@ -7,13 +7,27 @@ import type { TrialTemplate } from "@/components/onboarding/types";
 
 export const BLANK_TEMPLATE_ID = "blank";
 
+// Must match the "general" id in lib/config/industries.ts. Excluded from
+// getting a recommendation badge — it's the neutral default, not a solution
+// pack pitch — even though it still drives the Blank Workspace preselection.
+const GENERAL_WORKSPACE_INDUSTRY_ID = "general";
+
+// Maps an lib/config/industries.ts industry id to the template that best
+// matches it. Industries with no entry here have no template counterpart
+// yet, so they get today's behavior: no preselection, no badge.
+const INDUSTRY_TO_TEMPLATE_ID: Record<string, string> = {
+  [GENERAL_WORKSPACE_INDUSTRY_ID]: BLANK_TEMPLATE_ID,
+  insurance: "insurance",
+  real_estate: "real-estate",
+  professional_services: "professional-services",
+};
+
 const TEMPLATES = [
   {
     id: "insurance",
     title: "Insurance Agency",
     description: "CRM + Recruitment + Policies",
     icon: Shield,
-    recommended: true,
   },
   {
     id: "financial-advisory",
@@ -43,12 +57,19 @@ const TEMPLATES = [
 
 interface TrialStepTemplateProps {
   initialSelected: string;
+  selectedIndustry: string;
   onBack: () => void;
   onContinue: (template: TrialTemplate) => Promise<void>;
 }
 
-export function TrialStepTemplate({ initialSelected, onBack, onContinue }: TrialStepTemplateProps) {
-  const [selectedId, setSelectedId] = useState(initialSelected);
+export function TrialStepTemplate({ initialSelected, selectedIndustry, onBack, onContinue }: TrialStepTemplateProps) {
+  const preselectedTemplateId = selectedIndustry ? INDUSTRY_TO_TEMPLATE_ID[selectedIndustry] : undefined;
+  const recommendedTemplateId =
+    selectedIndustry && selectedIndustry !== GENERAL_WORKSPACE_INDUSTRY_ID
+      ? INDUSTRY_TO_TEMPLATE_ID[selectedIndustry]
+      : undefined;
+
+  const [selectedId, setSelectedId] = useState(initialSelected || preselectedTemplateId || "");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
 
@@ -80,7 +101,7 @@ export function TrialStepTemplate({ initialSelected, onBack, onContinue }: Trial
             title={template.title}
             description={template.description}
             selected={selectedId === template.id}
-            recommended={template.recommended}
+            recommended={recommendedTemplateId === template.id}
             onClick={() => setSelectedId(template.id)}
           />
         ))}

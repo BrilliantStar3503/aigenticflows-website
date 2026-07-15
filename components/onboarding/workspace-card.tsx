@@ -42,15 +42,13 @@ export function WorkspaceCard({
         <Icon size={16} className="text-white" strokeWidth={2} />
       </div>
       <div>
-        <div className="flex items-center gap-1.5">
-          <span className="text-[13.5px] font-bold text-neutral-900">{title}</span>
-          {recommended && (
-            <span className="inline-flex items-center rounded-full bg-brand-red px-1.5 py-0.5 text-[8.5px] font-bold uppercase tracking-wide text-white">
-              Recommended
-            </span>
-          )}
-        </div>
-        <div className="mt-0.5 text-[11.5px] leading-snug text-neutral-500">{description}</div>
+        <div className="text-[13.5px] font-bold text-neutral-900">{title}</div>
+        {recommended && (
+          <span className="mt-1 inline-flex items-center rounded-full bg-brand-red px-1.5 py-0.5 text-[8.5px] font-bold uppercase tracking-wide text-white">
+            Recommended for your selected industry
+          </span>
+        )}
+        <div className="mt-1 text-[11.5px] leading-snug text-neutral-500">{description}</div>
       </div>
     </button>
   );
