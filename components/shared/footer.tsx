@@ -150,7 +150,9 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-neutral-100 pt-8 sm:flex-row">
-          <span className="text-[12px] text-neutral-400">© 2026 AIGENTIC Flows. All rights reserved.</span>
+          <span className="text-[12px] text-neutral-400">
+            © 2026 AIGENTIC Flows. Operated by Christopher Garcia. All rights reserved.
+          </span>
           <div className="flex items-center gap-3">
             {SOCIAL_LINKS.map((social) => (
               <a

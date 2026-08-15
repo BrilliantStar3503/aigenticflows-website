@@ -7,6 +7,9 @@ export function TermsOfServiceContent() {
         otherwise using the Service, you agree to these Terms on behalf of yourself and the organization you
         represent (your "Agency").
       </p>
+      <p>
+        AIGENTIC Flows is operated by Christopher Garcia.
+      </p>
 
       <h2>1. The Service</h2>
       <p>

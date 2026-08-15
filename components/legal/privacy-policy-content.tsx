@@ -8,6 +8,9 @@ export function PrivacyPolicyContent() {
         tracking, offered under each customer agency's own branding (the "Service").
       </p>
       <p>
+        AIGENTIC Flows is operated by Christopher Garcia.
+      </p>
+      <p>
         This policy is written to align with the Philippines' Data Privacy Act of 2012 (Republic Act No. 10173,
         "RA 10173") and its Implementing Rules and Regulations. If your organization operates outside the
         Philippines, additional local requirements may also apply to your use of the Service; please contact us if
@@ -59,7 +62,8 @@ export function PrivacyPolicyContent() {
         The Service uses cookies that are strictly necessary for sign-in and session security. We do not currently
         run third-party analytics or advertising tracking on our website or in the Service. If that changes, we
         will publish a separate Cookie Policy describing exactly what's used and, where required, ask for your
-        consent before it runs.
+        consent before it runs. As stated above, AIGENTIC Flows — and the cookies described in this section — is
+        operated by Christopher Garcia.
       </p>
 
       <h2>3. How we use information</h2>

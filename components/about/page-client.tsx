@@ -13,6 +13,7 @@ import { Timeline } from "@/components/about/timeline";
 import { Principles } from "@/components/about/principles";
 import { Vision } from "@/components/about/vision";
 import { Stats } from "@/components/about/stats";
+import { Operator } from "@/components/about/operator";
 import { Footer } from "@/components/shared/footer";
 import { CTASection } from "@/components/shared/cta-section";
 
@@ -38,6 +39,8 @@ export function AboutPageClient() {
       <Vision />
 
       <Stats />
+
+      <Operator />
 
       <CTASection
         headline="Ready to modernize your business?"
