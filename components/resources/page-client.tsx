@@ -6,7 +6,7 @@ import { HeroNav } from "@/components/home/hero-nav";
 import dynamic from "next/dynamic";
 
 const LoginModal = dynamic(() => import("@/components/auth/login-modal").then((mod) => mod.LoginModal), { ssr: false });
-const TrialModal = dynamic(() => import("@/components/onboarding/trial-modal").then((mod) => mod.TrialModal), { ssr: false });
+import { openRequestAccess } from "@/lib/request-access";
 import { ResourcesHero } from "@/components/resources/hero";
 import { CategoryGrid } from "@/components/resources/category-grid";
 import { FeaturedResources } from "@/components/resources/featured-resources";
@@ -19,15 +19,13 @@ import { CTASection } from "@/components/shared/cta-section";
 export function ResourcesPageClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   useAuthRedirectPrompt(() => setIsLoginOpen(true));
-  const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   return (
     <main className="bg-white">
-      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
-      <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
+      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => openRequestAccess()} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); openRequestAccess(); }} />
 
-      <ResourcesHero onStartTrialClick={() => setIsTrialOpen(true)} />
+      <ResourcesHero onStartTrialClick={() => openRequestAccess()} />
 
       <CategoryGrid />
 
@@ -42,7 +40,7 @@ export function ResourcesPageClient() {
       <CTASection
         headline="Start learning. Start growing."
         subtitle="Everything you need to get the most out of AIGENTIC Flows, in one place."
-        onPrimaryClick={() => setIsTrialOpen(true)}
+        onPrimaryClick={() => openRequestAccess()}
         secondaryLabel="Browse Documentation"
       />
 

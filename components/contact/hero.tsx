@@ -50,7 +50,7 @@ export function ContactHero({ onStartTrialClick }: ContactHeroProps) {
               className="mt-8 flex gap-3"
             >
               <AimpButton variant="primary" onClick={onStartTrialClick}>
-                Start Free Trial
+                Request Access
               </AimpButton>
               <a
                 href="#contact-form"

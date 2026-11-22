@@ -6,7 +6,7 @@ import { HeroNav } from "@/components/home/hero-nav";
 import dynamic from "next/dynamic";
 
 const LoginModal = dynamic(() => import("@/components/auth/login-modal").then((mod) => mod.LoginModal), { ssr: false });
-const TrialModal = dynamic(() => import("@/components/onboarding/trial-modal").then((mod) => mod.TrialModal), { ssr: false });
+import { TALK_TO_SALES_MAILTO, openRequestAccess } from "@/lib/request-access";
 import { PricingHero } from "@/components/pricing/hero";
 import { PricingCards } from "@/components/pricing/pricing-cards";
 import { ComparisonTable } from "@/components/pricing/comparison-table";
@@ -18,17 +18,15 @@ import { CTASection } from "@/components/shared/cta-section";
 export function PricingPageClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   useAuthRedirectPrompt(() => setIsLoginOpen(true));
-  const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   return (
     <main className="bg-white">
-      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
-      <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
+      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => openRequestAccess()} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); openRequestAccess(); }} />
 
-      <PricingHero onStartTrialClick={() => setIsTrialOpen(true)} />
+      <PricingHero onStartTrialClick={() => openRequestAccess()} />
 
-      <PricingCards onStartTrialClick={() => setIsTrialOpen(true)} />
+      <PricingCards onStartTrialClick={() => openRequestAccess()} />
 
       <ComparisonTable />
 
@@ -38,9 +36,10 @@ export function PricingPageClient() {
 
       <CTASection
         headline="Start building your business with AIGENTIC Flows today."
-        subtitle="Free 14-day trial. No credit card required."
-        onPrimaryClick={() => setIsTrialOpen(true)}
+        subtitle="Workspaces are set up by our team. Request access to get started."
+        onPrimaryClick={() => openRequestAccess()}
         secondaryLabel="Talk to Sales"
+        secondaryHref={TALK_TO_SALES_MAILTO}
       />
 
       <Footer />

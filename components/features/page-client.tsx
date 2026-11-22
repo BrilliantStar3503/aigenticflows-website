@@ -6,7 +6,7 @@ import { HeroNav } from "@/components/home/hero-nav";
 import dynamic from "next/dynamic";
 
 const LoginModal = dynamic(() => import("@/components/auth/login-modal").then((mod) => mod.LoginModal), { ssr: false });
-const TrialModal = dynamic(() => import("@/components/onboarding/trial-modal").then((mod) => mod.TrialModal), { ssr: false });
+import { BOOK_A_DEMO_MAILTO, openRequestAccess } from "@/lib/request-access";
 import { FeaturesHero } from "@/components/features/hero";
 import { CapabilityGrid } from "@/components/features/capability-grid";
 import { FeatureShowcase } from "@/components/features/feature-showcase";
@@ -26,15 +26,13 @@ import { CTASection } from "@/components/shared/cta-section";
 export function FeaturesPageClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   useAuthRedirectPrompt(() => setIsLoginOpen(true));
-  const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   return (
     <main className="bg-white">
-      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
-      <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
+      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => openRequestAccess()} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); openRequestAccess(); }} />
 
-      <FeaturesHero onStartTrialClick={() => setIsTrialOpen(true)} />
+      <FeaturesHero onStartTrialClick={() => openRequestAccess()} />
 
       <CapabilityGrid />
 
@@ -134,9 +132,10 @@ export function FeaturesPageClient() {
 
       <CTASection
         headline="Ready to work smarter?"
-        subtitle="Start your free 14-day trial, or book a demo to see AIGENTIC Flows configured for your business."
-        onPrimaryClick={() => setIsTrialOpen(true)}
+        subtitle="Request access, or book a demo to see AIGENTIC Flows configured for your business."
+        onPrimaryClick={() => openRequestAccess()}
         secondaryLabel="Book a Demo"
+        secondaryHref={BOOK_A_DEMO_MAILTO}
       />
 
       <Footer />

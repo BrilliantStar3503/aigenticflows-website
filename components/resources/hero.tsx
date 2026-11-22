@@ -54,7 +54,7 @@ export function ResourcesHero({ onStartTrialClick }: ResourcesHeroProps) {
             >
               <AimpButton variant="secondary">Browse Documentation</AimpButton>
               <AimpButton variant="primary" onClick={onStartTrialClick}>
-                Start Free Trial
+                Request Access
               </AimpButton>
             </motion.div>
           </div>

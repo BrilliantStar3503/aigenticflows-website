@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AimpButton } from "@/components/ui/button";
 import { DashboardPreview } from "@/components/home/dashboard-preview";
 import { TabletScale } from "@/components/shared/tablet-scale";
+import { openTalkToSales } from "@/lib/request-access";
 
 interface AboutHeroProps {
   onStartTrialClick: () => void;
@@ -52,9 +53,11 @@ export function AboutHero({ onStartTrialClick }: AboutHeroProps) {
               className="mt-8 flex gap-3"
             >
               <AimpButton variant="primary" onClick={onStartTrialClick}>
-                Start Free Trial
+                Request Access
               </AimpButton>
-              <AimpButton variant="secondary">Contact Sales</AimpButton>
+              <AimpButton variant="secondary" onClick={openTalkToSales}>
+                Contact Sales
+              </AimpButton>
             </motion.div>
           </div>
 

@@ -55,7 +55,7 @@ export const PAGE_METADATA = {
   pricing: {
     title: "Pricing — Simple Plans That Scale With You",
     description:
-      "Choose the AIGENTIC Flows plan that fits your business today and scale as your organization grows. Start with a free 14-day trial.",
+      "Choose the AIGENTIC Flows plan that fits your business today and scale as your organization grows. Request access to get started.",
     path: "/pricing",
   },
   about: {
@@ -73,7 +73,7 @@ export const PAGE_METADATA = {
   contact: {
     title: "Contact Sales — Let's Build Your Business Operating Platform",
     description:
-      "Talk to our team, book a demo, or start your free trial. We're here to help you modernize your business with AIGENTIC Flows.",
+      "Talk to our team, book a demo, or request access. We're here to help you modernize your business with AIGENTIC Flows.",
     path: "/contact",
   },
   privacy: {

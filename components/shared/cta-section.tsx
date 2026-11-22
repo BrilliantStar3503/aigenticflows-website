@@ -23,7 +23,7 @@ export function CTASection({ headline, subtitle, onPrimaryClick, secondaryLabel,
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <AimpButton variant="primary" onClick={onPrimaryClick}>
-            Start Free Trial
+            Request Access
             <ArrowRight size={14} />
           </AimpButton>
           {secondaryHref ? (

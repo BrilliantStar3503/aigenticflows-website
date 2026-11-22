@@ -12,6 +12,7 @@ import {
 import { AimpButton } from "@/components/ui/button";
 import { DashboardPreview } from "@/components/home/dashboard-preview";
 import { TabletScale } from "@/components/shared/tablet-scale";
+import { openBookADemo } from "@/lib/request-access";
 
 const INDUSTRY_CHIPS = [
   { label: "Insurance", icon: Shield, className: "-left-4 top-4", floatDelay: "0s" },
@@ -71,9 +72,11 @@ export function SolutionsHero({ onStartTrialClick }: SolutionsHeroProps) {
               className="mt-8 flex gap-3"
             >
               <AimpButton variant="primary" onClick={onStartTrialClick}>
-                Start Free Trial
+                Request Access
               </AimpButton>
-              <AimpButton variant="secondary">Book a Demo</AimpButton>
+              <AimpButton variant="secondary" onClick={openBookADemo}>
+                Book a Demo
+              </AimpButton>
             </motion.div>
           </div>
 

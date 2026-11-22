@@ -25,7 +25,7 @@ export function PrivacyPolicyContent() {
         <li>
           <strong>As a Data Controller</strong> — for account and billing-adjacent information about the people who
           sign up for, administer, or use the Service (Owners, Managers, Advisors, Recruiters, and website visitors
-          who request a trial or contact us). We decide how this information is used.
+          who request access or contact us). We decide how this information is used.
         </li>
         <li>
           <strong>As a Data Processor</strong> — for the client, contact, and business data that an agency's own
@@ -42,7 +42,7 @@ export function PrivacyPolicyContent() {
       <h2>2. Information we collect</h2>
       <h3>2.1 Account and workspace information</h3>
       <ul>
-        <li>Name, email address, and password (encrypted) when you create a trial account or are invited to a workspace.</li>
+        <li>Name, email address, and authentication-related information when you register for an account or are invited to access a workspace.</li>
         <li>Agency/workspace details you provide during setup: agency name, industry, time zone, currency, locale, and branding.</li>
         <li>Role and workspace membership information (Owner, Manager, Advisor, or Recruiter).</li>
       </ul>

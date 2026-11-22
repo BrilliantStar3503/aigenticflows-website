@@ -6,7 +6,7 @@ import { HeroNav } from "@/components/home/hero-nav";
 import { Footer } from "@/components/shared/footer";
 
 const LoginModal = dynamic(() => import("@/components/auth/login-modal").then((mod) => mod.LoginModal), { ssr: false });
-const TrialModal = dynamic(() => import("@/components/onboarding/trial-modal").then((mod) => mod.TrialModal), { ssr: false });
+import { openRequestAccess } from "@/lib/request-access";
 
 /**
  * Shared shell for legal pages (Privacy Policy, Terms of Service, and any
@@ -24,13 +24,11 @@ export function LegalShell({
   children: ReactNode;
 }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   return (
     <main className="bg-white">
-      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
-      <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
+      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => openRequestAccess()} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); openRequestAccess(); }} />
 
       <article className="mx-auto max-w-3xl px-6 py-20">
         <h1 className="text-3xl font-bold tracking-tight text-neutral-900">{title}</h1>

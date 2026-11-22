@@ -53,7 +53,7 @@ export function FeaturesHero({ onStartTrialClick }: FeaturesHeroProps) {
               className="mt-8 flex gap-3"
             >
               <AimpButton variant="primary" onClick={onStartTrialClick}>
-                Start Free Trial
+                Request Access
               </AimpButton>
               <AimpButton variant="secondary">View Pricing</AimpButton>
             </motion.div>

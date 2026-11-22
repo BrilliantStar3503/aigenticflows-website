@@ -58,13 +58,13 @@ function LoginView({
       <SocialButtons />
 
       <p className="mt-6 text-center text-[12.5px] text-neutral-500">
-        Don&apos;t have an account?{" "}
+        Don&apos;t have access yet?{" "}
         <button
           type="button"
           onClick={onStartTrialClick}
           className="font-semibold text-brand-red hover:underline"
         >
-          Start free trial
+          Request access
         </button>
       </p>
     </div>

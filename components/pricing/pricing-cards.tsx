@@ -1,6 +1,7 @@
 "use client";
 
 import { PricingCard, type PricingTier } from "@/components/pricing/pricing-card";
+import { openTalkToSales } from "@/lib/request-access";
 
 const TIERS: PricingTier[] = [
   {
@@ -8,7 +9,7 @@ const TIERS: PricingTier[] = [
     description: "For small teams getting started with AIGENTIC Flows.",
     price: "Custom",
     billingLabel: "Tailored to your team size",
-    ctaLabel: "Start Free Trial",
+    ctaLabel: "Request Access",
     features: [
       "Core Platform — Contacts, Companies, Deals & Pipeline",
       "Team directory, Tasks, and unified Calendar",
@@ -21,7 +22,7 @@ const TIERS: PricingTier[] = [
     description: "For teams ready to add an industry Solution Pack.",
     price: "Custom",
     billingLabel: "Tailored to your team size",
-    ctaLabel: "Start Free Trial",
+    ctaLabel: "Request Access",
     features: [
       "Everything in Starter",
       "1 industry Solution Pack (currently: Insurance)",
@@ -34,7 +35,7 @@ const TIERS: PricingTier[] = [
     description: "For multi-line organizations running more than one Solution Pack.",
     price: "Custom",
     billingLabel: "Tailored to your team size",
-    ctaLabel: "Start Free Trial",
+    ctaLabel: "Request Access",
     recommended: true,
     features: [
       "Everything in Growth",
@@ -73,7 +74,13 @@ export function PricingCards({ onStartTrialClick }: PricingCardsProps) {
           <PricingCard
             key={tier.name}
             {...tier}
-            onCtaClick={tier.ctaLabel === "Start Free Trial" ? onStartTrialClick : undefined}
+            onCtaClick={
+              tier.ctaLabel === "Request Access"
+                ? onStartTrialClick
+                : tier.ctaLabel === "Contact Sales"
+                  ? openTalkToSales
+                  : undefined
+            }
           />
         ))}
       </div>

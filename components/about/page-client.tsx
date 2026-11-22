@@ -6,7 +6,7 @@ import { HeroNav } from "@/components/home/hero-nav";
 import dynamic from "next/dynamic";
 
 const LoginModal = dynamic(() => import("@/components/auth/login-modal").then((mod) => mod.LoginModal), { ssr: false });
-const TrialModal = dynamic(() => import("@/components/onboarding/trial-modal").then((mod) => mod.TrialModal), { ssr: false });
+import { TALK_TO_SALES_MAILTO, openRequestAccess } from "@/lib/request-access";
 import { AboutHero } from "@/components/about/hero";
 import { Mission } from "@/components/about/mission";
 import { Timeline } from "@/components/about/timeline";
@@ -20,15 +20,13 @@ import { CTASection } from "@/components/shared/cta-section";
 export function AboutPageClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   useAuthRedirectPrompt(() => setIsLoginOpen(true));
-  const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   return (
     <main className="bg-white">
-      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
-      <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
+      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => openRequestAccess()} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); openRequestAccess(); }} />
 
-      <AboutHero onStartTrialClick={() => setIsTrialOpen(true)} />
+      <AboutHero onStartTrialClick={() => openRequestAccess()} />
 
       <Mission />
 
@@ -44,9 +42,10 @@ export function AboutPageClient() {
 
       <CTASection
         headline="Ready to modernize your business?"
-        subtitle="Start your free 14-day trial, or talk to our team about what AIGENTIC Flows looks like for your business."
-        onPrimaryClick={() => setIsTrialOpen(true)}
+        subtitle="Request access, or talk to our team about what AIGENTIC Flows looks like for your business."
+        onPrimaryClick={() => openRequestAccess()}
         secondaryLabel="Talk to Sales"
+        secondaryHref={TALK_TO_SALES_MAILTO}
       />
 
       <Footer />

@@ -1,4 +1,5 @@
 import { Building2, Check } from "lucide-react";
+import { BOOK_A_DEMO_MAILTO, TALK_TO_SALES_MAILTO } from "@/lib/request-access";
 
 const ENTERPRISE_POINTS = [
   "Dedicated onboarding specialist",
@@ -37,12 +38,12 @@ export function EnterpriseSection() {
           </ul>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <button className="rounded-xl bg-brand-gold px-6 py-3 text-sm font-semibold text-neutral-900 shadow-[0_6px_16px_rgba(245,194,72,0.25)] transition-all hover:bg-brand-gold-hover hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2">
+            <a href={TALK_TO_SALES_MAILTO} className="rounded-xl bg-brand-gold px-6 py-3 text-sm font-semibold text-neutral-900 shadow-[0_6px_16px_rgba(245,194,72,0.25)] transition-all hover:bg-brand-gold-hover hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2">
               Contact Sales
-            </button>
-            <button className="rounded-xl border border-neutral-200 bg-white px-6 py-3 text-sm font-semibold text-neutral-700 transition-all hover:border-neutral-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2">
+            </a>
+            <a href={BOOK_A_DEMO_MAILTO} className="rounded-xl border border-neutral-200 bg-white px-6 py-3 text-sm font-semibold text-neutral-700 transition-all hover:border-neutral-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2">
               Book a Demo
-            </button>
+            </a>
           </div>
         </div>
       </div>

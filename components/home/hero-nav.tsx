@@ -73,7 +73,7 @@ export function HeroNav({ onLoginClick, onStartTrialClick }: HeroNavProps) {
             onClick={onStartTrialClick}
             className="flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-brand-gold px-3 py-2.5 text-[13px] font-semibold text-neutral-900 transition-colors hover:bg-brand-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navred lg:px-4 lg:text-sm"
           >
-            Start Free Trial
+            Request Access
             <ArrowRight size={14} />
           </button>
         </div>

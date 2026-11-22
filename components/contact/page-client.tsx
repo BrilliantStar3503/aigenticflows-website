@@ -6,7 +6,7 @@ import { HeroNav } from "@/components/home/hero-nav";
 import dynamic from "next/dynamic";
 
 const LoginModal = dynamic(() => import("@/components/auth/login-modal").then((mod) => mod.LoginModal), { ssr: false });
-const TrialModal = dynamic(() => import("@/components/onboarding/trial-modal").then((mod) => mod.TrialModal), { ssr: false });
+import { openRequestAccess } from "@/lib/request-access";
 import { ContactHero } from "@/components/contact/hero";
 import { ContactOptions } from "@/components/contact/contact-options";
 import { ContactForm } from "@/components/contact/contact-form";
@@ -18,17 +18,15 @@ import { CTASection } from "@/components/shared/cta-section";
 export function ContactPageClient() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   useAuthRedirectPrompt(() => setIsLoginOpen(true));
-  const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   return (
     <main className="bg-white">
-      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
-      <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
+      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => openRequestAccess()} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); openRequestAccess(); }} />
 
-      <ContactHero onStartTrialClick={() => setIsTrialOpen(true)} />
+      <ContactHero onStartTrialClick={() => openRequestAccess()} />
 
-      <ContactOptions onStartTrialClick={() => setIsTrialOpen(true)} />
+      <ContactOptions onStartTrialClick={() => openRequestAccess()} />
 
       <ContactForm />
 
@@ -38,8 +36,8 @@ export function ContactPageClient() {
 
       <CTASection
         headline="Ready to transform your business?"
-        subtitle="Start your free 14-day trial, or request a consultation with our team."
-        onPrimaryClick={() => setIsTrialOpen(true)}
+        subtitle="Request access, or request a consultation with our team."
+        onPrimaryClick={() => openRequestAccess()}
         secondaryLabel="Request Consultation"
         secondaryHref="#contact-form"
       />

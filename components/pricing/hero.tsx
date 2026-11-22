@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { AimpButton } from "@/components/ui/button";
+import { openTalkToSales } from "@/lib/request-access";
 
 interface PricingHeroProps {
   onStartTrialClick: () => void;
@@ -47,9 +48,11 @@ export function PricingHero({ onStartTrialClick }: PricingHeroProps) {
           className="mt-8 flex flex-wrap items-center justify-center gap-3"
         >
           <AimpButton variant="primary" onClick={onStartTrialClick}>
-            Start Free Trial
+            Request Access
           </AimpButton>
-          <AimpButton variant="secondary">Talk to Sales</AimpButton>
+          <AimpButton variant="secondary" onClick={openTalkToSales}>
+            Talk to Sales
+          </AimpButton>
         </motion.div>
 
         <motion.div

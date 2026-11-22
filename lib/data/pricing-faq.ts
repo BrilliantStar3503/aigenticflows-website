@@ -1,3 +1,5 @@
+import { REQUEST_ACCESS_EMAIL } from "@/lib/request-access";
+
 export const PRICING_FAQ_ITEMS = [
   {
     question: "Can I change plans later?",
@@ -5,9 +7,9 @@ export const PRICING_FAQ_ITEMS = [
       "Yes. As your business grows, your account team will move you to a new plan without disrupting your workspace.",
   },
   {
-    question: "Is there a free trial?",
+    question: "How do I get started?",
     answer:
-      "Every plan starts with a free 14-day trial, no credit card required, so you can explore AIGENTIC Flows before committing.",
+      `Workspaces are set up by our team. Email ${REQUEST_ACCESS_EMAIL} to request access and we'll help you choose the right plan.`,
   },
   {
     question: "Do you charge per user?",
@@ -34,7 +36,7 @@ export const PRICING_FAQ_ITEMS = [
     answer: "Yes. Every plan includes guided onboarding, and Enterprise plans include a dedicated onboarding specialist.",
   },
   {
-    question: "What happens after my trial ends?",
-    answer: "You'll be able to choose a plan and continue seamlessly — your workspace and data are preserved throughout.",
+    question: "Can I request a trial or evaluation?",
+    answer: `Self-service trials are not currently available. You may request access at ${REQUEST_ACCESS_EMAIL}. Any trial or evaluation offered is subject to individually agreed terms.`,
   },
 ];

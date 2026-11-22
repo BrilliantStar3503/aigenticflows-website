@@ -20,12 +20,8 @@ export function softwareApplicationJsonLd() {
     operatingSystem: "Web",
     description:
       "AIGENTIC Flows is the AI-powered business operating platform that combines CRM, automation, analytics, and communication for service-based organizations.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Free 14-day trial, no credit card required.",
-    },
+    // CHG-2A-web: no `offers` block. There is no free or self-serve offer (workspaces are by request),
+    // and published pricing is not modelled here, so advertising price "0" would be misleading.
   };
 }
 

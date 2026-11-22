@@ -150,7 +150,7 @@ export function MobileMenu({ open, onClose, onLoginClick, onStartTrialClick }: M
                 }}
                 className="flex min-h-[44px] items-center justify-center gap-1.5 rounded-xl bg-brand-gold text-[15px] font-semibold text-neutral-900 shadow-[0_8px_20px_rgba(245,194,72,0.35)] transition-colors hover:bg-brand-gold-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40"
               >
-                Start Free Trial
+                Request Access
                 <ArrowRight size={14} />
               </button>
             </div>

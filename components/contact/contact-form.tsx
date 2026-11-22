@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Check, CheckCircle2 } from "lucide-react";
+import { Check, Mail } from "lucide-react";
+import { REQUEST_ACCESS_EMAIL, buildRequestAccessMailto } from "@/lib/request-access";
 
 const BENEFITS = [
   "Personalized demo",
@@ -47,10 +48,30 @@ export function ContactForm() {
     EMAIL_PATTERN.test(values.email) &&
     values.company.trim().length > 0;
 
+  // CHG-2A-web: the website has no sending backend. Instead of pretending to submit, compose the
+  // message in the visitor's own email app, addressed to the team. Nothing is sent or stored here.
+  const composeMailto = () =>
+    buildRequestAccessMailto({
+      subject: `Consultation request — ${values.company.trim() || "AIGENTIC Flows"}`,
+      body: [
+        "Hi AIGENTIC Flows team,",
+        "",
+        `Name: ${values.firstName.trim()} ${values.lastName.trim()}`,
+        `Business email: ${values.email.trim()}`,
+        `Company: ${values.company.trim()}`,
+        `Industry: ${values.industry}`,
+        `Company size: ${values.companySize}`,
+        "",
+        values.message.trim() || "(no message)",
+      ].join("\n"),
+    });
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     setTouched(true);
-    if (isValid) setSubmitted(true);
+    if (!isValid) return;
+    window.location.href = composeMailto();
+    setSubmitted(true);
   };
 
   const setField = (field: keyof typeof values, value: string) => {
@@ -88,11 +109,24 @@ export function ContactForm() {
           {submitted ? (
             <div className="flex flex-col items-center py-8 text-center">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-pink">
-                <CheckCircle2 size={26} className="text-brand-red" />
+                <Mail size={26} className="text-brand-red" />
               </div>
-              <h3 className="mt-4 text-lg font-bold text-neutral-900">Request received</h3>
-              <p className="mt-1.5 max-w-[320px] text-[13.5px] leading-relaxed text-neutral-600">
-                Someone from our team will reach out within one business day.
+              <h3 className="mt-4 text-lg font-bold text-neutral-900">Your email is ready to send</h3>
+              <p className="mt-1.5 max-w-[340px] text-[13.5px] leading-relaxed text-neutral-600">
+                We opened your email app with your message to{" "}
+                <span className="font-semibold text-neutral-800">{REQUEST_ACCESS_EMAIL}</span>. Please press Send
+                there. Your request reaches our team only once the email is sent.
+              </p>
+              <p className="mt-3 max-w-[340px] text-[12.5px] leading-relaxed text-neutral-500">
+                Nothing opened?{" "}
+                <a href={composeMailto()} className="font-semibold text-brand-red hover:underline">
+                  Try again
+                </a>{" "}
+                or email us directly at{" "}
+                <a href={`mailto:${REQUEST_ACCESS_EMAIL}`} className="font-semibold text-brand-red hover:underline">
+                  {REQUEST_ACCESS_EMAIL}
+                </a>
+                .
               </p>
             </div>
           ) : (
@@ -217,6 +251,13 @@ export function ContactForm() {
               >
                 Request Consultation
               </button>
+              <p className="text-center text-[12px] leading-relaxed text-neutral-500">
+                This opens your email app with your details filled in. Prefer to write directly? Email{" "}
+                <a href={`mailto:${REQUEST_ACCESS_EMAIL}`} className="font-semibold text-brand-red hover:underline">
+                  {REQUEST_ACCESS_EMAIL}
+                </a>
+                .
+              </p>
             </form>
           )}
         </div>

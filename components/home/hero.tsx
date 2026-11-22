@@ -12,7 +12,7 @@ import { TabletScale } from "@/components/shared/tablet-scale";
 import dynamic from "next/dynamic";
 
 const LoginModal = dynamic(() => import("@/components/auth/login-modal").then((mod) => mod.LoginModal), { ssr: false });
-const TrialModal = dynamic(() => import("@/components/onboarding/trial-modal").then((mod) => mod.TrialModal), { ssr: false });
+import { openRequestAccess } from "@/lib/request-access";
 
 const textVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -26,13 +26,11 @@ const textVariants = {
 export function Hero() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   useAuthRedirectPrompt(() => setIsLoginOpen(true));
-  const [isTrialOpen, setIsTrialOpen] = useState(false);
 
   return (
     <section className="relative bg-white">
-      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => setIsTrialOpen(true)} />
-      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); setIsTrialOpen(true); }} />
-      <TrialModal open={isTrialOpen} onClose={() => setIsTrialOpen(false)} />
+      <HeroNav onLoginClick={() => setIsLoginOpen(true)} onStartTrialClick={() => openRequestAccess()} />
+      <LoginModal open={isLoginOpen} onClose={() => setIsLoginOpen(false)} onStartTrialClick={() => { setIsLoginOpen(false); openRequestAccess(); }} />
 
       <div className="mx-auto max-w-[1600px] px-4 pb-8 pt-9 sm:px-6 lg:px-14">
         <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-[0.5fr_1fr] xl:gap-8">
@@ -81,8 +79,8 @@ export function Hero() {
               custom={0.4}
               className="mt-8 flex gap-3"
             >
-              <AimpButton variant="primary" onClick={() => setIsTrialOpen(true)}>
-                Start Free Trial
+              <AimpButton variant="primary" onClick={() => openRequestAccess()}>
+                Request Access
               </AimpButton>
               <AimpButton variant="secondary">
                 <Play size={14} className="text-brand-red" />

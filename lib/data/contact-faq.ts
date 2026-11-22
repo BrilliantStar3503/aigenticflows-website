@@ -1,3 +1,5 @@
+import { REQUEST_ACCESS_EMAIL } from "@/lib/request-access";
+
 export const CONTACT_FAQ_ITEMS = [
   {
     question: "How long does onboarding take?",
@@ -19,7 +21,7 @@ export const CONTACT_FAQ_ITEMS = [
       "Yes. Enterprise plans include dedicated onboarding, custom branding, and API access — contact our sales team for a tailored quote.",
   },
   {
-    question: "Can I try AIGENTIC Flows before purchasing?",
-    answer: "Yes. Every plan starts with a free 14-day trial, no credit card required.",
+    question: "How do I get access to AIGENTIC Flows?",
+    answer: `Workspaces are set up by our team. Email ${REQUEST_ACCESS_EMAIL} to request access.`,
   },
 ];

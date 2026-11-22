@@ -28,8 +28,9 @@ export function TermsOfServiceContent() {
 
       <h2>2. Accounts and eligibility</h2>
       <p>
-        You must be at least 18 years old and able to form a binding contract to use the Service. Workspaces are
-        currently provisioned by AIGENTIC Flows directly, or created through our self-serve trial signup. You are
+        You must be at least 18 years old and able to form a binding contract to use the Service. Agency workspaces
+        are provisioned by AIGENTIC Flows following an approved access request. Access to an existing workspace may
+        also be granted through an authorized invitation. You are
         responsible for the accuracy of the information you provide and for maintaining the confidentiality of
         your account credentials.
       </p>
@@ -42,16 +43,20 @@ export function TermsOfServiceContent() {
         people authorized to have it.
       </p>
 
-      <h2>4. Free trial</h2>
+      <h2>4. Access to the Service</h2>
       <p>
-        We currently offer a 14-day free trial to new Agencies signing up through our website. We may modify or end
-        the trial offer, or the length of the trial period, at any time without notice for future signups. At the
-        end of a trial, continued use of the Service requires an active subscription arranged with us directly.
+        Access to the Service is provided by invitation or by arrangement with us. Agencies that would like to use
+        the Service may request access by contacting us at{" "}
+        <a href="mailto:inquiry@aigenticflows.com">inquiry@aigenticflows.com</a>. We review each request and, if we
+        approve it, set up the Agency&apos;s workspace. We may, at our discretion, offer a particular Agency a trial or
+        evaluation period. Any such period, including its length and how it may end, is subject to terms separately
+        agreed with that Agency. Continued use of the Service after any trial or evaluation period requires an active
+        subscription arranged with us directly.
       </p>
 
       <h2>5. Subscription plans</h2>
       <p>
-        Beyond the free trial, the Service is offered under several subscription tiers (currently: Starter, Growth,
+        The Service is offered under several subscription tiers (currently: Starter, Growth,
         Business, Pro, and Enterprise), each with different Solution Pack and feature allowances. Plan changes,
         seat counts, and billing arrangements are currently handled directly with your AIGENTIC Flows account
         contact rather than through a self-serve checkout. Enterprise and Partner Program customers may have
